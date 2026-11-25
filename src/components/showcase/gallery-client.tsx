@@ -153,14 +153,16 @@ export function GalleryClient({ items }: { items: GalleryCardItem[] }) {
                   </div>
                 </div>
 
-                <div className="mt-4 flex items-center justify-between gap-2 border-t border-hairline pt-3 px-1">
-                  <span className="font-mono text-[11px] text-ink-muted">{spec.technique}</span>
+                <div className="mt-4 flex items-center justify-between gap-3 border-t border-hairline pt-3 px-1">
+                  <span className="min-w-0 truncate font-mono text-[11px] text-ink-muted">
+                    {spec.technique}
+                  </span>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex shrink-0 items-center gap-2">
                     <button
                       type="button"
                       onClick={() => handleCopySource(spec.slug, sourceCode)}
-                      className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-hairline bg-subtle/60 px-3 text-xs font-medium text-ink hover:border-hairline-strong cursor-pointer transition-colors"
+                      className="inline-flex h-8 shrink-0 whitespace-nowrap items-center gap-1.5 rounded-lg border border-hairline bg-subtle/60 px-3 text-xs font-medium text-ink hover:border-hairline-strong cursor-pointer transition-colors"
                     >
                       {isCopied ? (
                         <>
@@ -177,7 +179,7 @@ export function GalleryClient({ items }: { items: GalleryCardItem[] }) {
 
                     <Link
                       href={`/components/${spec.slug}`}
-                      className="inline-flex h-8 items-center gap-1 rounded-lg bg-ink px-3 text-xs font-semibold text-canvas hover:opacity-90 transition-opacity"
+                      className="inline-flex h-8 shrink-0 whitespace-nowrap items-center gap-1 rounded-lg bg-ink px-3 text-xs font-semibold text-canvas hover:opacity-90 transition-opacity"
                     >
                       <span>Playground</span>
                       <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />

@@ -11,8 +11,8 @@ export interface CodeDiffViewerProps {
 }
 
 const DIFF_LINES = [
-  { num: 1, type: "remove" as const, code: 'import * as THREE from "three";' },
-  { num: 2, type: "remove" as const, code: 'import { motion } from "framer-motion";' },
+  { num: 1, type: "remove" as const, code: 'import { HeavyStage } from "@legacy/webgl-kit";' },
+  { num: 2, type: "remove" as const, code: 'import { SpringEngine } from "@legacy/anim-core";' },
   { num: 3, type: "add" as const, code: 'import { BayerDitherWave } from "@/components/raster";' },
   { num: 4, type: "context" as const, code: "export function Hero() {" },
   { num: 5, type: "add" as const, code: '  return <BayerDitherWave pixelSize={3} fadeLeft />;' },

@@ -6,6 +6,7 @@ import { AttentionHeatmapMatrix } from "@/registry/components/attention-heatmap-
 import { BayerDitherAurora } from "@/registry/components/bayer-dither-aurora";
 import { BayerDitherWave } from "@/registry/components/bayer-dither-wave";
 import { BentoSparklineTile } from "@/registry/components/bento-sparkline-tile";
+import { BiometricIrisScanner } from "@/registry/components/biometric-iris-scanner";
 import { BorderBeamCard } from "@/registry/components/border-beam-card";
 import { ChromaticNoiseVeil } from "@/registry/components/chromatic-noise-veil";
 import { ConstellationMesh } from "@/registry/components/constellation-mesh";
@@ -16,22 +17,26 @@ import { DitherLatencyMeter } from "@/registry/components/dither-latency-meter";
 import { DockMagnifyBar } from "@/registry/components/dock-magnify-bar";
 import { EditorialMeshGradient } from "@/registry/components/editorial-mesh-gradient";
 import { EmbeddingVectorCloud } from "@/registry/components/embedding-vector-cloud";
+import { EncryptionCipherVault } from "@/registry/components/encryption-cipher-vault";
 import { EventWaterfallStream } from "@/registry/components/event-waterfall-stream";
 import { FiberOpticStream } from "@/registry/components/fiber-optic-stream";
 import { FibonacciDotGlobe } from "@/registry/components/fibonacci-dot-globe";
 import { GravityRippleGrid } from "@/registry/components/gravity-ripple-grid";
 import { HalftoneSpotlight } from "@/registry/components/halftone-spotlight";
+import { HashChainLedger } from "@/registry/components/hash-chain-ledger";
 import { HexagonSignalHive } from "@/registry/components/hexagon-signal-hive";
 import { IsolatedLanesGrid } from "@/registry/components/isolated-lanes-grid";
 import { IsometricCircuitChip } from "@/registry/components/isometric-circuit-chip";
 import { IsometricFloatingCube } from "@/registry/components/isometric-floating-cube";
 import { IsometricServerRack } from "@/registry/components/isometric-server-rack";
+import { IsometricSignalTower } from "@/registry/components/isometric-signal-tower";
 import { LiveActivityStack } from "@/registry/components/live-activity-stack";
 import { MagneticFieldLines } from "@/registry/components/magnetic-field-lines";
 import { MagneticShutterButton } from "@/registry/components/magnetic-shutter-button";
 import { MagneticWaveWordmark } from "@/registry/components/magnetic-wave-wordmark";
 import { MarqueeLogoRibbon } from "@/registry/components/marquee-logo-ribbon";
 import { MeshTopologyFlow } from "@/registry/components/mesh-topology-flow";
+import { MetricGaugeArc } from "@/registry/components/metric-gauge-arc";
 import { MicrochipPinoutCore } from "@/registry/components/microchip-pinout-core";
 import { MotherboardBusMatrix } from "@/registry/components/motherboard-bus-matrix";
 import { NeuralLayerGraph } from "@/registry/components/neural-layer-graph";
@@ -45,6 +50,8 @@ import { PixelDissolveLoader } from "@/registry/components/pixel-dissolve-loader
 import { PixelMatrixStream } from "@/registry/components/pixel-matrix-stream";
 import { PixelSunburstDither } from "@/registry/components/pixel-sunburst-dither";
 import { RadarSweepGrid } from "@/registry/components/radar-sweep-grid";
+import { RetroPerspectiveGrid } from "@/registry/components/retro-perspective-grid";
+import { SegmentedToggleRail } from "@/registry/components/segmented-toggle-rail";
 import { ShimmerCommandPill } from "@/registry/components/shimmer-command-pill";
 import { SiliconWaferGrid } from "@/registry/components/silicon-wafer-grid";
 import { SplitFlapCounter } from "@/registry/components/split-flap-counter";
@@ -58,6 +65,7 @@ import { TopographicContours } from "@/registry/components/topographic-contours"
 import { VectorCircuitTrace } from "@/registry/components/vector-circuit-trace";
 import { VoronoiPulseGrid } from "@/registry/components/voronoi-pulse-grid";
 import { WireframeTorusKnot } from "@/registry/components/wireframe-torus-knot";
+import { ZeroTrustFirewall } from "@/registry/components/zero-trust-firewall";
 
 export type PalettePresetId = "terracotta" | "cobalt" | "mono" | "emerald";
 
@@ -901,6 +909,104 @@ export function ComponentStage({
           paused={paused}
           className={`w-full ${heightClass} rounded-xl`}
         />
+      );
+
+    case "encryption-cipher-vault":
+      return (
+        <EncryptionCipherVault
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "zero-trust-firewall":
+      return (
+        <ZeroTrustFirewall
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "hash-chain-ledger":
+      return (
+        <div
+          className={`flex w-full ${heightClass} flex-col items-center justify-center gap-3 overflow-hidden rounded-xl bg-[#060609] px-3`}
+        >
+          <HashChainLedger
+            accentColor={pal.accentHex}
+            speed={speed}
+            paused={paused}
+            className={compact ? "scale-[0.86]" : "scale-110"}
+          />
+          <span className="font-mono text-[11px] text-[#8d8880]">
+            SHA-256 immutable audit chain
+          </span>
+        </div>
+      );
+
+    case "biometric-iris-scanner":
+      return (
+        <BiometricIrisScanner
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "retro-perspective-grid":
+      return (
+        <RetroPerspectiveGrid
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "isometric-signal-tower":
+      return (
+        <IsometricSignalTower
+          color={pal.monoHex}
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl p-3`}
+        />
+      );
+
+    case "segmented-toggle-rail":
+      return (
+        <div
+          className={`flex w-full ${heightClass} flex-col items-center justify-center gap-3 overflow-hidden rounded-xl bg-[#060609] px-3`}
+        >
+          <SegmentedToggleRail
+            accentColor={pal.accentHex}
+            className={compact ? "scale-[0.88]" : ""}
+          />
+          <span className="font-mono text-[11px] text-[#8d8880]">
+            Click tabs to glide specular capsule
+          </span>
+        </div>
+      );
+
+    case "metric-gauge-arc":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center rounded-xl bg-[#060609] px-4`}
+        >
+          <MetricGaugeArc
+            label={customText?.trim() || "EDGE SLA"}
+            accentColor={pal.accentHex}
+            speed={speed}
+            paused={paused}
+            className={compact ? "scale-95" : "scale-125"}
+          />
+        </div>
       );
 
     default:

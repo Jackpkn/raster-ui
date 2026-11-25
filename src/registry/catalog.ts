@@ -1,5 +1,6 @@
 export type RasterCategoryId =
   | "all"
+  | "security"
   | "ai-agents"
   | "data-flow"
   | "circuits"
@@ -35,6 +36,11 @@ export interface RasterComponentSpec {
 
 export const RASTER_CATEGORIES: RasterCategory[] = [
   { id: "all", label: "All Components", description: "Every zero-dependency procedural visual" },
+  {
+    id: "security",
+    label: "Security & Crypto",
+    description: "Cipher lock vaults, zero-trust packet firewalls, immutable hash chains, and iris scanners",
+  },
   {
     id: "ai-agents",
     label: "AI & Agents",
@@ -1401,6 +1407,182 @@ export function SpacetimeBackdrop() {
       gridGap={18}
       accentColor="#f27c63"
       className="h-72 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "encryption-cipher-vault",
+    name: "Encryption Cipher Vault",
+    category: "security",
+    tagline: "Counter-rotating calibrated cipher rings and rolling hex indices guarding a lock core.",
+    description:
+      "Hardware enclave visualizer pairing engraved radial tick rings, rotating hex keystreams, and a precision geometric lock emblem on pure Canvas2D.",
+    technique: "Concentric Cipher Canvas2D",
+    fileName: "encryption-cipher-vault.tsx",
+    exportName: "EncryptionCipherVault",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { EncryptionCipherVault } from "@/components/raster/encryption-cipher-vault";
+
+export function VaultCard() {
+  return (
+    <EncryptionCipherVault
+      accentColor="#f27c63"
+      className="h-64 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "zero-trust-firewall",
+    name: "Zero Trust Firewall",
+    category: "security",
+    tagline: "Edge inspection barrier letting verified traffic glide through while deflecting threats.",
+    description:
+      "Streams incoming packets toward a segmented WAF shield wall where authorized requests pass cleanly and blocked probes spark and ricochet back.",
+    technique: "Packet Inspection Canvas2D",
+    fileName: "zero-trust-firewall.tsx",
+    exportName: "ZeroTrustFirewall",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { ZeroTrustFirewall } from "@/components/raster/zero-trust-firewall";
+
+export function FirewallHero() {
+  return (
+    <ZeroTrustFirewall
+      accentColor="#f27c63"
+      className="h-64 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "hash-chain-ledger",
+    name: "Hash Chain Ledger",
+    category: "security",
+    tagline: "Immutable linked cryptographic audit blocks sealing sequentially with glowing digests.",
+    description:
+      "Displays an ordered audit-log ledger cycling active verification seals across linked hash blocks with zero external dependencies.",
+    technique: "Pure React Hash-Chain Strip",
+    fileName: "hash-chain-ledger.tsx",
+    exportName: "HashChainLedger",
+    dependencies: [],
+    usageSnippet: `import { HashChainLedger } from "@/components/raster/hash-chain-ledger";
+
+export function AuditLogCard() {
+  return <HashChainLedger accentColor="#f27c63" />;
+}`,
+  },
+  {
+    slug: "biometric-iris-scanner",
+    name: "Biometric Iris Scanner",
+    category: "security",
+    tagline: "Optical iris verification reticle with fine radial fibers and sweeping laser scan.",
+    description:
+      "Renders a high-contrast biometric optical viewfinder with 64 radial striations illuminating dynamically as a horizontal laser verification beam sweeps across.",
+    technique: "Optical Reticle Canvas2D",
+    fileName: "biometric-iris-scanner.tsx",
+    exportName: "BiometricIrisScanner",
+    dependencies: [],
+    usageSnippet: `import { BiometricIrisScanner } from "@/components/raster/biometric-iris-scanner";
+
+export function PasskeyCard() {
+  return (
+    <BiometricIrisScanner
+      accentColor="#f27c63"
+      className="h-64 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "retro-perspective-grid",
+    name: "Retro Perspective Grid",
+    category: "spatial",
+    tagline: "Architectural obsidian vanishing-point runway scrolling beneath a subtle horizon glow.",
+    description:
+      "Clean, restrained dark-mode perspective grid with exponentially spaced depth lines and a glowing center meridian on pure Canvas2D.",
+    technique: "3D Horizon Perspective Canvas2D",
+    fileName: "retro-perspective-grid.tsx",
+    exportName: "RetroPerspectiveGrid",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { RetroPerspectiveGrid } from "@/components/raster/retro-perspective-grid";
+
+export function HorizonBackdrop() {
+  return (
+    <RetroPerspectiveGrid
+      accentColor="#f27c63"
+      className="h-72 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "isometric-signal-tower",
+    name: "Isometric Signal Tower",
+    category: "isometric",
+    tagline: "1-bit Bayer-dithered isometric broadcast spire radiating expanding pixel radio rings.",
+    description:
+      "Hardware-pixelated isometric radio tower over a dark pedestal emitting rhythmic concentric 1-bit broadcast waves for real-time edge or pub/sub cards.",
+    technique: "1-Bit Isometric Spire Canvas2D",
+    fileName: "isometric-signal-tower.tsx",
+    exportName: "IsometricSignalTower",
+    dependencies: [],
+    usageSnippet: `import { IsometricSignalTower } from "@/components/raster/isometric-signal-tower";
+
+export function BroadcastTile() {
+  return (
+    <IsometricSignalTower
+      color="#e7e2da"
+      accentColor="#f27c63"
+      className="h-52 w-full rounded-xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "segmented-toggle-rail",
+    name: "Segmented Toggle Rail",
+    category: "ui-motion",
+    tagline: "Interactive obsidian segmented tab bar with a smooth GPU-gliding specular capsule.",
+    description:
+      "Zero-dependency tactile segmented control using CSS spring easing to slide an elevated dark active pill and indicator dot seamlessly between views.",
+    technique: "Pure React + GPU Sliding Pill",
+    fileName: "segmented-toggle-rail.tsx",
+    exportName: "SegmentedToggleRail",
+    dependencies: [],
+    usageSnippet: `import { SegmentedToggleRail } from "@/components/raster/segmented-toggle-rail";
+
+export function ModeSwitcher() {
+  return (
+    <SegmentedToggleRail
+      options={["Overview", "Streams", "Circuits", "Logs"]}
+      accentColor="#f27c63"
+    />
+  );
+}`,
+  },
+  {
+    slug: "metric-gauge-arc",
+    name: "Metric Gauge Arc",
+    category: "telemetry",
+    tagline: "Calibrated SVG radial instrument gauge with hairline ticks and smooth arc sweep.",
+    description:
+      "Precision Braun-inspired radial gauge animating a glowing SVG progress arc and tabular readout across calibrated degree ticks with zero external packages.",
+    technique: "Pure SVG Radial Telemetry Dial",
+    fileName: "metric-gauge-arc.tsx",
+    exportName: "MetricGaugeArc",
+    dependencies: [],
+    usageSnippet: `import { MetricGaugeArc } from "@/components/raster/metric-gauge-arc";
+
+export function SlaTile() {
+  return (
+    <MetricGaugeArc
+      label="EDGE SLA"
+      values={[84, 96, 91, 99]}
+      accentColor="#f27c63"
     />
   );
 }`,

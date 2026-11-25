@@ -44,7 +44,9 @@ export function PlaygroundClient({
                     ? "AGENT"
                     : spec.slug === "token-stream-composer"
                       ? "raster-reason-v2"
-                      : "Ship your craft. We run it."
+                      : spec.slug === "metric-gauge-arc"
+                        ? "EDGE SLA"
+                        : "Ship your craft. We run it."
   );
   const [meshVariant, setMeshVariant] = useState<"obsidian" | "alabaster">("obsidian");
   const [codeTab, setCodeTab] = useState<"usage" | "source" | "cli">("usage");
@@ -69,7 +71,8 @@ export function PlaygroundClient({
     spec.slug === "magnetic-shutter-button" ||
     spec.slug === "data-beam-hub" ||
     spec.slug === "agent-reasoning-orbit" ||
-    spec.slug === "token-stream-composer";
+    spec.slug === "token-stream-composer" ||
+    spec.slug === "metric-gauge-arc";
   const isMesh = spec.slug === "editorial-mesh-gradient";
 
   return (

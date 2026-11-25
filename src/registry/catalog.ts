@@ -1,5 +1,6 @@
 export type RasterCategoryId =
   | "all"
+  | "editorial"
   | "website-blocks"
   | "security"
   | "ai-agents"
@@ -37,6 +38,11 @@ export interface RasterComponentSpec {
 
 export const RASTER_CATEGORIES: RasterCategory[] = [
   { id: "all", label: "All Components", description: "Every zero-dependency procedural visual" },
+  {
+    id: "editorial",
+    label: "Editorial & Craft",
+    description: "Calligraphic SVG signatures, fanned 3D card decks, liquid metaballs, and changelog timelines",
+  },
   {
     id: "website-blocks",
     label: "Website Essentials",
@@ -1760,6 +1766,167 @@ export function HeroHeading() {
       words={["effortless", "razor-sharp", "weightless", "unforgettable"]}
       accentColor="#f27c63"
       className="text-4xl sm:text-5xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "signature-draw-path",
+    name: "Signature Draw Path",
+    category: "editorial",
+    tagline: "Calligraphic SVG fountain-pen signature drawing itself smoothly with an accent flourish.",
+    description:
+      "Pure CSS stroke-dashoffset signature reveal over a dashed editorial baseline rule. Built for founder notes, manifestos, and bespoke sign-off sections.",
+    technique: "Pure SVG stroke-dashoffset Reveal",
+    fileName: "signature-draw-path.tsx",
+    exportName: "SignatureDrawPath",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { SignatureDrawPath } from "@/components/raster/signature-draw-path";
+
+export function FounderNote() {
+  return (
+    <SignatureDrawPath
+      caption="RASTER FOUNDRY · EDITION 01"
+      accentColor="#f27c63"
+    />
+  );
+}`,
+  },
+  {
+    slug: "card-deck-fan",
+    name: "Card Deck Fan",
+    category: "editorial",
+    tagline: "Interactive 3D fanned obsidian card stack that smoothly deals cards to the back on click.",
+    description:
+      "Tactile layered card fan with directional tilt, elevation shadow, and spring-eased cycling for changelogs, highlights, or interactive product decks.",
+    technique: "Layered 3D CSS Fan Deck",
+    fileName: "card-deck-fan.tsx",
+    exportName: "CardDeckFan",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { CardDeckFan } from "@/components/raster/card-deck-fan";
+
+export function HighlightStack() {
+  return <CardDeckFan accentColor="#f27c63" />;
+}`,
+  },
+  {
+    slug: "timeline-milestone-rail",
+    name: "Timeline Milestone Rail",
+    category: "editorial",
+    tagline: "Vertical changelog & roadmap timeline with a glowing spine and clickable release nodes.",
+    description:
+      "Clean obsidian version history rail illuminating the active spine segment and release badge with zero external libraries.",
+    technique: "Interactive Vertical Spine Rail",
+    fileName: "timeline-milestone-rail.tsx",
+    exportName: "TimelineMilestoneRail",
+    dependencies: [],
+    usageSnippet: `import { TimelineMilestoneRail } from "@/components/raster/timeline-milestone-rail";
+
+export function ChangelogRail() {
+  return <TimelineMilestoneRail accentColor="#f27c63" />;
+}`,
+  },
+  {
+    slug: "liquid-metaball-blob",
+    name: "Liquid Metaball Blob",
+    category: "editorial",
+    tagline: "Organic SVG gooey metaball droplets fusing and splitting cleanly like molten mercury.",
+    description:
+      "Uses a pure SVG Gaussian blur and alpha color-matrix threshold filter so orbiting spheres merge organically with zero JavaScript animation loops.",
+    technique: "Pure SVG feColorMatrix Metaballs",
+    fileName: "liquid-metaball-blob.tsx",
+    exportName: "LiquidMetaballBlob",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { LiquidMetaballBlob } from "@/components/raster/liquid-metaball-blob";
+
+export function FluidVisual() {
+  return (
+    <LiquidMetaballBlob
+      accentColor="#f27c63"
+      className="h-64 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "browser-frame-mockup",
+    name: "Browser Frame Mockup",
+    category: "website-blocks",
+    tagline: "Interactive Desktop, Tablet, and Mobile viewport morpher window with live grid reflow.",
+    description:
+      "Click between device presets to smoothly resize an obsidian browser chrome and demonstrate responsive UI layouts inside feature sections.",
+    technique: "Responsive CSS Width Morpher",
+    fileName: "browser-frame-mockup.tsx",
+    exportName: "BrowserFrameMockup",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { BrowserFrameMockup } from "@/components/raster/browser-frame-mockup";
+
+export function ResponsiveDemo() {
+  return (
+    <BrowserFrameMockup
+      url="raster.dev/showcase"
+      accentColor="#f27c63"
+    />
+  );
+}`,
+  },
+  {
+    slug: "spotlight-testimonial-card",
+    name: "Spotlight Testimonial Card",
+    category: "website-blocks",
+    tagline: "Editorial dark quote card cycling builder testimonials with clickable progress dots.",
+    description:
+      "Pairs oversized serif opening quotation marks, avatar monograms, and smooth progress indicators for clean social-proof sections.",
+    technique: "Editorial Quote Switcher Card",
+    fileName: "spotlight-testimonial-card.tsx",
+    exportName: "SpotlightTestimonialCard",
+    dependencies: [],
+    usageSnippet: `import { SpotlightTestimonialCard } from "@/components/raster/spotlight-testimonial-card";
+
+export function SocialProof() {
+  return <SpotlightTestimonialCard accentColor="#f27c63" />;
+}`,
+  },
+  {
+    slug: "radial-context-menu",
+    name: "Radial Context Menu",
+    category: "ui-motion",
+    tagline: "Clickable circular pie action wheel blooming six radial pills around a glowing core.",
+    description:
+      "Inspired by creative-tool radial wheels: click the central hub to fan out six crisp action pills with trigonometric layout and live selection feedback.",
+    technique: "Trigonometric CSS Radial Wheel",
+    fileName: "radial-context-menu.tsx",
+    exportName: "RadialContextMenu",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { RadialContextMenu } from "@/components/raster/radial-context-menu";
+
+export function QuickWheel() {
+  return <RadialContextMenu accentColor="#f27c63" />;
+}`,
+  },
+  {
+    slug: "thermal-heatmap-calendar",
+    name: "Thermal Heatmap Calendar",
+    category: "telemetry",
+    tagline: "Interactive 16-week contribution and deploy activity calendar with hover event readout.",
+    description:
+      "Deterministic multi-week thermal intensity lattice displaying live day-level event counts on hover with zero charting packages.",
+    technique: "Interactive CSS Activity Matrix",
+    fileName: "thermal-heatmap-calendar.tsx",
+    exportName: "ThermalHeatmapCalendar",
+    dependencies: [],
+    usageSnippet: `import { ThermalHeatmapCalendar } from "@/components/raster/thermal-heatmap-calendar";
+
+export function VelocityHeatmap() {
+  return (
+    <ThermalHeatmapCalendar
+      weeks={16}
+      accentColor="#f27c63"
     />
   );
 }`,

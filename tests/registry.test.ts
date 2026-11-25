@@ -8,13 +8,13 @@ import {
 } from "../src/registry/source-loader";
 
 describe("Raster UI Component Registry", () => {
-  it("exposes 74 unique components spanning all 14 visual families", () => {
-    expect(RASTER_COMPONENTS).toHaveLength(74);
+  it("exposes 82 unique components spanning all 15 visual families", () => {
+    expect(RASTER_COMPONENTS).toHaveLength(82);
     const slugs = new Set(RASTER_COMPONENTS.map((c) => c.slug));
-    expect(slugs.size).toBe(74);
+    expect(slugs.size).toBe(82);
 
     const visualFamilies = RASTER_CATEGORIES.filter((c) => c.id !== "all");
-    expect(visualFamilies).toHaveLength(14);
+    expect(visualFamilies).toHaveLength(15);
 
     const categoriesUsed = new Set<string>(RASTER_COMPONENTS.map((c) => c.category));
     for (const cat of visualFamilies) {
@@ -56,7 +56,7 @@ describe("Raster UI Component Registry", () => {
   it("builds a complete registry index JSON payload", () => {
     const index = buildRegistryIndex("https://raster.example");
     expect(index.name).toBe("raster-ui");
-    expect(index.items).toHaveLength(74);
+    expect(index.items).toHaveLength(82);
     expect(index.items[0]?.registryUrl).toBe("https://raster.example/r/bayer-dither-wave.json");
   });
 });

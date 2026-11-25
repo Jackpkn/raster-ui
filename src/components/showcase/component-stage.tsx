@@ -10,6 +10,8 @@ import { BentoFeatureSwitcher } from "@/registry/components/bento-feature-switch
 import { BentoSparklineTile } from "@/registry/components/bento-sparkline-tile";
 import { BiometricIrisScanner } from "@/registry/components/biometric-iris-scanner";
 import { BorderBeamCard } from "@/registry/components/border-beam-card";
+import { BrowserFrameMockup } from "@/registry/components/browser-frame-mockup";
+import { CardDeckFan } from "@/registry/components/card-deck-fan";
 import { ChromaticNoiseVeil } from "@/registry/components/chromatic-noise-veil";
 import { CodeDiffViewer } from "@/registry/components/code-diff-viewer";
 import { CommandPalettePreview } from "@/registry/components/command-palette-preview";
@@ -36,6 +38,7 @@ import { IsometricCircuitChip } from "@/registry/components/isometric-circuit-ch
 import { IsometricFloatingCube } from "@/registry/components/isometric-floating-cube";
 import { IsometricServerRack } from "@/registry/components/isometric-server-rack";
 import { IsometricSignalTower } from "@/registry/components/isometric-signal-tower";
+import { LiquidMetaballBlob } from "@/registry/components/liquid-metaball-blob";
 import { LiveActivityStack } from "@/registry/components/live-activity-stack";
 import { MagneticFieldLines } from "@/registry/components/magnetic-field-lines";
 import { MagneticShutterButton } from "@/registry/components/magnetic-shutter-button";
@@ -57,16 +60,21 @@ import { PixelMatrixStream } from "@/registry/components/pixel-matrix-stream";
 import { PixelSunburstDither } from "@/registry/components/pixel-sunburst-dither";
 import { PricingToggleCard } from "@/registry/components/pricing-toggle-card";
 import { RadarSweepGrid } from "@/registry/components/radar-sweep-grid";
+import { RadialContextMenu } from "@/registry/components/radial-context-menu";
 import { RetroPerspectiveGrid } from "@/registry/components/retro-perspective-grid";
 import { SegmentedToggleRail } from "@/registry/components/segmented-toggle-rail";
 import { ShimmerCommandPill } from "@/registry/components/shimmer-command-pill";
+import { SignatureDrawPath } from "@/registry/components/signature-draw-path";
 import { SiliconWaferGrid } from "@/registry/components/silicon-wafer-grid";
 import { SplitFlapCounter } from "@/registry/components/split-flap-counter";
 import { SpotlightBentoCard } from "@/registry/components/spotlight-bento-card";
+import { SpotlightTestimonialCard } from "@/registry/components/spotlight-testimonial-card";
 import { StepperProgressRail } from "@/registry/components/stepper-progress-rail";
 import { TerminalCommandStepper } from "@/registry/components/terminal-command-stepper";
 import { TerminalScrambleText } from "@/registry/components/terminal-scramble-text";
+import { ThermalHeatmapCalendar } from "@/registry/components/thermal-heatmap-calendar";
 import { TiltGlassCard } from "@/registry/components/tilt-glass-card";
+import { TimelineMilestoneRail } from "@/registry/components/timeline-milestone-rail";
 import { TokenStreamComposer } from "@/registry/components/token-stream-composer";
 import { TopographicContours } from "@/registry/components/topographic-contours";
 import { VectorCircuitTrace } from "@/registry/components/vector-circuit-trace";
@@ -1113,6 +1121,106 @@ export function ComponentStage({
             speed={speed}
             paused={paused}
             className={compact ? "text-xl sm:text-2xl" : "text-3xl sm:text-5xl"}
+          />
+        </div>
+      );
+
+    case "signature-draw-path":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center rounded-xl bg-[#060609] px-4`}
+        >
+          <SignatureDrawPath
+            caption={customText?.trim() || "RASTER FOUNDRY · EDITION 01"}
+            accentColor={pal.accentHex}
+            speed={speed}
+            paused={paused}
+            className={compact ? "scale-95" : "scale-125"}
+          />
+        </div>
+      );
+
+    case "card-deck-fan":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center overflow-hidden rounded-xl bg-[#060609] px-4`}
+        >
+          <CardDeckFan
+            accentColor={pal.accentHex}
+            className={compact ? "scale-95" : "scale-125"}
+          />
+        </div>
+      );
+
+    case "timeline-milestone-rail":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center overflow-hidden rounded-xl bg-[#050507] p-3`}
+        >
+          <TimelineMilestoneRail
+            accentColor={pal.accentHex}
+            className={compact ? "scale-[0.86]" : ""}
+          />
+        </div>
+      );
+
+    case "liquid-metaball-blob":
+      return (
+        <LiquidMetaballBlob
+          accentColor={pal.accentHex}
+          secondaryColor={pal.monoHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "browser-frame-mockup":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center overflow-hidden rounded-xl bg-[#050507] p-3.5`}
+        >
+          <BrowserFrameMockup
+            accentColor={pal.accentHex}
+            className={compact ? "max-w-xs" : "max-w-md"}
+          />
+        </div>
+      );
+
+    case "spotlight-testimonial-card":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center overflow-hidden rounded-xl bg-[#050507] p-3.5`}
+        >
+          <SpotlightTestimonialCard
+            accentColor={pal.accentHex}
+            speed={speed}
+            paused={paused}
+            className={compact ? "scale-[0.88]" : ""}
+          />
+        </div>
+      );
+
+    case "radial-context-menu":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center overflow-hidden rounded-xl bg-[#060609] px-4`}
+        >
+          <RadialContextMenu
+            accentColor={pal.accentHex}
+            className={compact ? "scale-95" : "scale-125"}
+          />
+        </div>
+      );
+
+    case "thermal-heatmap-calendar":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center overflow-hidden rounded-xl bg-[#050507] p-3`}
+        >
+          <ThermalHeatmapCalendar
+            accentColor={pal.accentHex}
+            className={compact ? "scale-[0.9]" : "scale-125"}
           />
         </div>
       );

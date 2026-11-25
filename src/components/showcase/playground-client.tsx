@@ -46,7 +46,9 @@ export function PlaygroundClient({
                       ? "raster-reason-v2"
                       : spec.slug === "metric-gauge-arc"
                         ? "EDGE SLA"
-                        : "Ship your craft. We run it."
+                        : spec.slug === "word-flip-headline"
+                          ? "Build websites that feel"
+                          : "Ship your craft. We run it."
   );
   const [meshVariant, setMeshVariant] = useState<"obsidian" | "alabaster">("obsidian");
   const [codeTab, setCodeTab] = useState<"usage" | "source" | "cli">("usage");

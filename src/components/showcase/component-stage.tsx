@@ -5,10 +5,14 @@ import { AsciiWaveField } from "@/registry/components/ascii-wave-field";
 import { AttentionHeatmapMatrix } from "@/registry/components/attention-heatmap-matrix";
 import { BayerDitherAurora } from "@/registry/components/bayer-dither-aurora";
 import { BayerDitherWave } from "@/registry/components/bayer-dither-wave";
+import { BeforeAfterSlider } from "@/registry/components/before-after-slider";
+import { BentoFeatureSwitcher } from "@/registry/components/bento-feature-switcher";
 import { BentoSparklineTile } from "@/registry/components/bento-sparkline-tile";
 import { BiometricIrisScanner } from "@/registry/components/biometric-iris-scanner";
 import { BorderBeamCard } from "@/registry/components/border-beam-card";
 import { ChromaticNoiseVeil } from "@/registry/components/chromatic-noise-veil";
+import { CodeDiffViewer } from "@/registry/components/code-diff-viewer";
+import { CommandPalettePreview } from "@/registry/components/command-palette-preview";
 import { ConstellationMesh } from "@/registry/components/constellation-mesh";
 import { CrtScanlineText } from "@/registry/components/crt-scanline-text";
 import { DataBeamHub } from "@/registry/components/data-beam-hub";
@@ -21,10 +25,12 @@ import { EncryptionCipherVault } from "@/registry/components/encryption-cipher-v
 import { EventWaterfallStream } from "@/registry/components/event-waterfall-stream";
 import { FiberOpticStream } from "@/registry/components/fiber-optic-stream";
 import { FibonacciDotGlobe } from "@/registry/components/fibonacci-dot-globe";
+import { FloatingIslandNavbar } from "@/registry/components/floating-island-navbar";
 import { GravityRippleGrid } from "@/registry/components/gravity-ripple-grid";
 import { HalftoneSpotlight } from "@/registry/components/halftone-spotlight";
 import { HashChainLedger } from "@/registry/components/hash-chain-ledger";
 import { HexagonSignalHive } from "@/registry/components/hexagon-signal-hive";
+import { InteractiveAccordionList } from "@/registry/components/interactive-accordion-list";
 import { IsolatedLanesGrid } from "@/registry/components/isolated-lanes-grid";
 import { IsometricCircuitChip } from "@/registry/components/isometric-circuit-chip";
 import { IsometricFloatingCube } from "@/registry/components/isometric-floating-cube";
@@ -49,6 +55,7 @@ import { PhosphorWaveform } from "@/registry/components/phosphor-waveform";
 import { PixelDissolveLoader } from "@/registry/components/pixel-dissolve-loader";
 import { PixelMatrixStream } from "@/registry/components/pixel-matrix-stream";
 import { PixelSunburstDither } from "@/registry/components/pixel-sunburst-dither";
+import { PricingToggleCard } from "@/registry/components/pricing-toggle-card";
 import { RadarSweepGrid } from "@/registry/components/radar-sweep-grid";
 import { RetroPerspectiveGrid } from "@/registry/components/retro-perspective-grid";
 import { SegmentedToggleRail } from "@/registry/components/segmented-toggle-rail";
@@ -65,6 +72,7 @@ import { TopographicContours } from "@/registry/components/topographic-contours"
 import { VectorCircuitTrace } from "@/registry/components/vector-circuit-trace";
 import { VoronoiPulseGrid } from "@/registry/components/voronoi-pulse-grid";
 import { WireframeTorusKnot } from "@/registry/components/wireframe-torus-knot";
+import { WordFlipHeadline } from "@/registry/components/word-flip-headline";
 import { ZeroTrustFirewall } from "@/registry/components/zero-trust-firewall";
 
 export type PalettePresetId = "terracotta" | "cobalt" | "mono" | "emerald";
@@ -1005,6 +1013,106 @@ export function ComponentStage({
             speed={speed}
             paused={paused}
             className={compact ? "scale-95" : "scale-125"}
+          />
+        </div>
+      );
+
+    case "command-palette-preview":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center overflow-hidden rounded-xl bg-[#050507] p-3`}
+        >
+          <CommandPalettePreview
+            accentColor={pal.accentHex}
+            className={compact ? "scale-[0.82]" : ""}
+          />
+        </div>
+      );
+
+    case "before-after-slider":
+      return (
+        <BeforeAfterSlider
+          accentColor={pal.accentHex}
+          className={`w-full ${heightClass}`}
+        />
+      );
+
+    case "code-diff-viewer":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center overflow-hidden rounded-xl bg-[#050507] p-3`}
+        >
+          <CodeDiffViewer
+            accentColor={pal.accentHex}
+            className={compact ? "scale-[0.84]" : ""}
+          />
+        </div>
+      );
+
+    case "pricing-toggle-card":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center overflow-hidden rounded-xl bg-[#050507] p-3`}
+        >
+          <PricingToggleCard
+            accentColor={pal.accentHex}
+            className={compact ? "scale-[0.88]" : ""}
+          />
+        </div>
+      );
+
+    case "interactive-accordion-list":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center overflow-hidden rounded-xl bg-[#050507] p-3`}
+        >
+          <InteractiveAccordionList
+            accentColor={pal.accentHex}
+            className={compact ? "scale-[0.82]" : ""}
+          />
+        </div>
+      );
+
+    case "floating-island-navbar":
+      return (
+        <div
+          className={`flex w-full ${heightClass} flex-col items-center justify-center gap-3 overflow-hidden rounded-xl bg-[#060609] px-3`}
+        >
+          <FloatingIslandNavbar
+            accentColor={pal.accentHex}
+            className={compact ? "scale-[0.86]" : ""}
+          />
+          <span className="font-mono text-[11px] text-[#8d8880]">
+            Hover links to glide frosted glass capsule
+          </span>
+        </div>
+      );
+
+    case "bento-feature-switcher":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center overflow-hidden rounded-xl bg-[#050507] p-3`}
+        >
+          <BentoFeatureSwitcher
+            accentColor={pal.accentHex}
+            speed={speed}
+            paused={paused}
+            className={compact ? "scale-[0.88]" : ""}
+          />
+        </div>
+      );
+
+    case "word-flip-headline":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center rounded-xl bg-[#060609] px-6 text-center`}
+        >
+          <WordFlipHeadline
+            prefix={customText?.trim() || "Build websites that feel"}
+            accentColor={pal.accentHex}
+            speed={speed}
+            paused={paused}
+            className={compact ? "text-xl sm:text-2xl" : "text-3xl sm:text-5xl"}
           />
         </div>
       );

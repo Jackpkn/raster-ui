@@ -1,5 +1,6 @@
 export type RasterCategoryId =
   | "all"
+  | "website-blocks"
   | "security"
   | "ai-agents"
   | "data-flow"
@@ -36,6 +37,11 @@ export interface RasterComponentSpec {
 
 export const RASTER_CATEGORIES: RasterCategory[] = [
   { id: "all", label: "All Components", description: "Every zero-dependency procedural visual" },
+  {
+    id: "website-blocks",
+    label: "Website Essentials",
+    description: "Interactive Cmd+K palettes, before/after sliders, code diffs, pricing cards, navbars, and accordions",
+  },
   {
     id: "security",
     label: "Security & Crypto",
@@ -1583,6 +1589,177 @@ export function SlaTile() {
       label="EDGE SLA"
       values={[84, 96, 91, 99]}
       accentColor="#f27c63"
+    />
+  );
+}`,
+  },
+  {
+    slug: "command-palette-preview",
+    name: "Command Palette Preview",
+    category: "website-blocks",
+    tagline: "Interactive Cmd+K search palette with live filtering, active row indicator, and shortcuts.",
+    description:
+      "Production-ready obsidian command modal that filters actions in real time, highlights active rows cleanly, and showcases keyboard-first SaaS UX with zero dependencies.",
+    technique: "Interactive React Cmd+K Palette",
+    fileName: "command-palette-preview.tsx",
+    exportName: "CommandPalettePreview",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { CommandPalettePreview } from "@/components/raster/command-palette-preview";
+
+export function ProductDemo() {
+  return <CommandPalettePreview accentColor="#f27c63" />;
+}`,
+  },
+  {
+    slug: "before-after-slider",
+    name: "Before After Slider",
+    category: "website-blocks",
+    tagline: "Draggable split comparison curtain with luminous vertical handle and keyboard arrows.",
+    description:
+      "Lets visitors drag or scrub cleanly between two visual or performance states using CSS clip-path and native pointer capture with zero dependencies.",
+    technique: "Pointer Capture + CSS clip-path",
+    fileName: "before-after-slider.tsx",
+    exportName: "BeforeAfterSlider",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { BeforeAfterSlider } from "@/components/raster/before-after-slider";
+
+export function PerformanceProof() {
+  return (
+    <BeforeAfterSlider
+      accentColor="#f27c63"
+      className="h-64 w-full"
+    />
+  );
+}`,
+  },
+  {
+    slug: "code-diff-viewer",
+    name: "Code Diff Viewer",
+    category: "website-blocks",
+    tagline: "IDE-grade interactive code diff card with Diff/Clean tabs and 1-click clipboard copy.",
+    description:
+      "Highlights removed dependencies and added clean imports side-by-side with instant toggle to the final copyable snippet for developer landing pages.",
+    technique: "Interactive React Diff + Copy Card",
+    fileName: "code-diff-viewer.tsx",
+    exportName: "CodeDiffViewer",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { CodeDiffViewer } from "@/components/raster/code-diff-viewer";
+
+export function MigrationCard() {
+  return (
+    <CodeDiffViewer
+      fileName="src/components/hero.tsx"
+      accentColor="#f27c63"
+    />
+  );
+}`,
+  },
+  {
+    slug: "pricing-toggle-card",
+    name: "Pricing Toggle Card",
+    category: "website-blocks",
+    tagline: "Elevated obsidian pricing tier card with Monthly/Annual billing switch and tabular price.",
+    description:
+      "Clean SaaS monetization card with specular top rim lighting, instant billing cadence toggle, savings badge, and accessible contrast.",
+    technique: "Interactive Billing Tier Card",
+    fileName: "pricing-toggle-card.tsx",
+    exportName: "PricingToggleCard",
+    dependencies: [],
+    usageSnippet: `import { PricingToggleCard } from "@/components/raster/pricing-toggle-card";
+
+export function PricingSection() {
+  return (
+    <PricingToggleCard
+      planName="Pro Studio"
+      monthlyPrice={29}
+      annualPrice={22}
+      accentColor="#f27c63"
+    />
+  );
+}`,
+  },
+  {
+    slug: "interactive-accordion-list",
+    name: "Interactive Accordion List",
+    category: "website-blocks",
+    tagline: "Silky pure-CSS grid-row FAQ & feature disclosure list with rotating plus indicator.",
+    description:
+      "Smoothly animates panel height via CSS grid-template-rows (0fr to 1fr) with a glowing active left hairline and zero layout jitter.",
+    technique: "Pure CSS Grid-Row Accordion",
+    fileName: "interactive-accordion-list.tsx",
+    exportName: "InteractiveAccordionList",
+    dependencies: [],
+    usageSnippet: `import { InteractiveAccordionList } from "@/components/raster/interactive-accordion-list";
+
+export function FaqBlock() {
+  return <InteractiveAccordionList accentColor="#f27c63" />;
+}`,
+  },
+  {
+    slug: "floating-island-navbar",
+    name: "Floating Island Navbar",
+    category: "website-blocks",
+    tagline: "Frosted obsidian pill navbar with a hover-gliding glass capsule behind navigation links.",
+    description:
+      "Apple and Linear inspired floating header bar that smoothly tracks hovered or active links using GPU-composited transforms and a specular rim border.",
+    technique: "GPU Sliding Pill Floating Header",
+    fileName: "floating-island-navbar.tsx",
+    exportName: "FloatingIslandNavbar",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { FloatingIslandNavbar } from "@/components/raster/floating-island-navbar";
+
+export function SiteHeader() {
+  return (
+    <FloatingIslandNavbar
+      brand="raster"
+      ctaLabel="Start"
+      accentColor="#f27c63"
+    />
+  );
+}`,
+  },
+  {
+    slug: "bento-feature-switcher",
+    name: "Bento Feature Switcher",
+    category: "website-blocks",
+    tagline: "Auto-advancing clickable feature tabs paired with a live telemetry spec stage.",
+    description:
+      "Cycles smoothly through core product pillars while letting visitors click any row directly to inspect specs and metrics with zero external libraries.",
+    technique: "Interactive Feature Showcase Tabs",
+    fileName: "bento-feature-switcher.tsx",
+    exportName: "BentoFeatureSwitcher",
+    dependencies: [],
+    usageSnippet: `import { BentoFeatureSwitcher } from "@/components/raster/bento-feature-switcher";
+
+export function FeatureTour() {
+  return <BentoFeatureSwitcher accentColor="#f27c63" />;
+}`,
+  },
+  {
+    slug: "word-flip-headline",
+    name: "Word Flip Headline",
+    category: "typography",
+    tagline: "Kinetic rotating hero headline cycling value-prop words with vertical blur-in entrance.",
+    description:
+      "Classic hero conversion headline that smoothly rotates emphasized adjectives with pure CSS blur-to-sharp upward motion and reduced-motion support.",
+    technique: "Pure CSS Vertical Blur Flip Type",
+    fileName: "word-flip-headline.tsx",
+    exportName: "WordFlipHeadline",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { WordFlipHeadline } from "@/components/raster/word-flip-headline";
+
+export function HeroHeading() {
+  return (
+    <WordFlipHeadline
+      prefix="Build websites that feel"
+      words={["effortless", "razor-sharp", "weightless", "unforgettable"]}
+      accentColor="#f27c63"
+      className="text-4xl sm:text-5xl"
     />
   );
 }`,

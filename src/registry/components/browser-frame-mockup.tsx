@@ -71,22 +71,22 @@ export function BrowserFrameMockup({
           />
         </div>
 
-        {/* Live Reflowing Mini Grid */}
+        {/* Live Reflowing Mini Grid (fixed vertical budget for zero layout shift) */}
         <div
-          className="grid gap-1.5 p-2.5"
+          className="grid h-[78px] gap-1.5 p-2"
           style={{ gridTemplateColumns: `repeat(${vp.cols}, minmax(0, 1fr))` }}
         >
           {[0, 1, 2].map((cell) => (
             <div
               key={cell}
-              className="h-11 rounded-md border p-1.5 flex flex-col justify-between"
+              className="rounded-md border px-1.5 py-1 flex flex-col justify-between"
               style={{
                 borderColor: cell === 0 ? `${accentColor}55` : "rgba(248, 245, 240, 0.08)",
                 backgroundColor: cell === 0 ? `${accentColor}12` : "rgba(255,255,255,0.02)",
               }}
             >
               <div
-                className="h-1.5 w-7 rounded-full"
+                className="h-1 w-6 rounded-full"
                 style={{
                   backgroundColor: cell === 0 ? accentColor : "rgba(248, 245, 240, 0.2)",
                 }}

@@ -1,6 +1,9 @@
 "use client";
 
+import { AgentReasoningOrbit } from "@/registry/components/agent-reasoning-orbit";
 import { AsciiWaveField } from "@/registry/components/ascii-wave-field";
+import { AttentionHeatmapMatrix } from "@/registry/components/attention-heatmap-matrix";
+import { BayerDitherAurora } from "@/registry/components/bayer-dither-aurora";
 import { BayerDitherWave } from "@/registry/components/bayer-dither-wave";
 import { BentoSparklineTile } from "@/registry/components/bento-sparkline-tile";
 import { BorderBeamCard } from "@/registry/components/border-beam-card";
@@ -12,14 +15,17 @@ import { DataFunnelPrism } from "@/registry/components/data-funnel-prism";
 import { DitherLatencyMeter } from "@/registry/components/dither-latency-meter";
 import { DockMagnifyBar } from "@/registry/components/dock-magnify-bar";
 import { EditorialMeshGradient } from "@/registry/components/editorial-mesh-gradient";
+import { EmbeddingVectorCloud } from "@/registry/components/embedding-vector-cloud";
 import { EventWaterfallStream } from "@/registry/components/event-waterfall-stream";
 import { FiberOpticStream } from "@/registry/components/fiber-optic-stream";
 import { FibonacciDotGlobe } from "@/registry/components/fibonacci-dot-globe";
+import { GravityRippleGrid } from "@/registry/components/gravity-ripple-grid";
 import { HalftoneSpotlight } from "@/registry/components/halftone-spotlight";
 import { HexagonSignalHive } from "@/registry/components/hexagon-signal-hive";
 import { IsolatedLanesGrid } from "@/registry/components/isolated-lanes-grid";
 import { IsometricCircuitChip } from "@/registry/components/isometric-circuit-chip";
 import { IsometricFloatingCube } from "@/registry/components/isometric-floating-cube";
+import { IsometricServerRack } from "@/registry/components/isometric-server-rack";
 import { LiveActivityStack } from "@/registry/components/live-activity-stack";
 import { MagneticFieldLines } from "@/registry/components/magnetic-field-lines";
 import { MagneticShutterButton } from "@/registry/components/magnetic-shutter-button";
@@ -28,6 +34,7 @@ import { MarqueeLogoRibbon } from "@/registry/components/marquee-logo-ribbon";
 import { MeshTopologyFlow } from "@/registry/components/mesh-topology-flow";
 import { MicrochipPinoutCore } from "@/registry/components/microchip-pinout-core";
 import { MotherboardBusMatrix } from "@/registry/components/motherboard-bus-matrix";
+import { NeuralLayerGraph } from "@/registry/components/neural-layer-graph";
 import { ObsidianStarfield } from "@/registry/components/obsidian-starfield";
 import { OrbitalRingLoader } from "@/registry/components/orbital-ring-loader";
 import { OscillatorClockRail } from "@/registry/components/oscillator-clock-rail";
@@ -46,6 +53,7 @@ import { StepperProgressRail } from "@/registry/components/stepper-progress-rail
 import { TerminalCommandStepper } from "@/registry/components/terminal-command-stepper";
 import { TerminalScrambleText } from "@/registry/components/terminal-scramble-text";
 import { TiltGlassCard } from "@/registry/components/tilt-glass-card";
+import { TokenStreamComposer } from "@/registry/components/token-stream-composer";
 import { TopographicContours } from "@/registry/components/topographic-contours";
 import { VectorCircuitTrace } from "@/registry/components/vector-circuit-trace";
 import { VoronoiPulseGrid } from "@/registry/components/voronoi-pulse-grid";
@@ -797,6 +805,102 @@ export function ComponentStage({
             className={compact ? "scale-[0.88]" : ""}
           />
         </div>
+      );
+
+    case "token-stream-composer":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center overflow-hidden rounded-xl bg-[#050507] p-4`}
+        >
+          <TokenStreamComposer
+            modelLabel={customText?.trim() || "raster-reason-v2"}
+            accentColor={pal.accentHex}
+            speed={speed}
+            paused={paused}
+            className={compact ? "max-w-md scale-[0.9]" : "max-w-lg"}
+          />
+        </div>
+      );
+
+    case "neural-layer-graph":
+      return (
+        <NeuralLayerGraph
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "agent-reasoning-orbit":
+      return (
+        <AgentReasoningOrbit
+          agentLabel={customText?.trim() || "AGENT"}
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl p-2`}
+        />
+      );
+
+    case "embedding-vector-cloud":
+      return (
+        <EmbeddingVectorCloud
+          pointRgb={pal.baseRgb}
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "attention-heatmap-matrix":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center overflow-hidden rounded-xl bg-[#050507] p-3`}
+        >
+          <AttentionHeatmapMatrix
+            accentColor={pal.accentHex}
+            speed={speed}
+            paused={paused}
+            className={compact ? "scale-[0.84]" : "scale-110"}
+          />
+        </div>
+      );
+
+    case "bayer-dither-aurora":
+      return (
+        <BayerDitherAurora
+          baseRgb={pal.baseRgb}
+          accentRgb={pal.accentRgb}
+          pixelSize={pixelSize}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "isometric-server-rack":
+      return (
+        <IsometricServerRack
+          color={pal.monoHex}
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl p-3`}
+        />
+      );
+
+    case "gravity-ripple-grid":
+      return (
+        <GravityRippleGrid
+          baseRgb={pal.baseRgb}
+          accentColor={pal.accentHex}
+          gridGap={Math.max(12, Math.min(26, pixelSize * 6))}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
       );
 
     default:

@@ -10,7 +10,7 @@ pnpm install
 pnpm dev
 ```
 
-Open `http://localhost:3001` to browse all 50 live components across 11 visual families (including Data Flow & Streams, Circuits & Silicon, Bayer & Halftone, 1-Bit Isometric, Telemetry, Physics, Surfaces, Loaders, and Kinetic Type), tweak props in the playground, copy single-file `.tsx` source code, or inspect the `shadcn`-compatible registry at `/r/registry.json`.
+Open `http://localhost:3001` to browse all 58 live components across 12 visual families (including AI & Agents, Data Flow & Streams, Circuits & Silicon, Bayer & Halftone, 1-Bit Isometric, Telemetry, Physics, Surfaces, Loaders, and Kinetic Type), tweak props in the playground, copy single-file `.tsx` source code, or inspect the `shadcn`-compatible registry at `/r/registry.json`.
 
 ## Installing Any Component via shadcn CLI
 

@@ -40,7 +40,11 @@ export function PlaygroundClient({
                 ? "Deploy Circuit"
                 : spec.slug === "data-beam-hub"
                   ? "CORE"
-                  : "Ship your craft. We run it."
+                  : spec.slug === "agent-reasoning-orbit"
+                    ? "AGENT"
+                    : spec.slug === "token-stream-composer"
+                      ? "raster-reason-v2"
+                      : "Ship your craft. We run it."
   );
   const [meshVariant, setMeshVariant] = useState<"obsidian" | "alabaster">("obsidian");
   const [codeTab, setCodeTab] = useState<"usage" | "source" | "cli">("usage");
@@ -63,7 +67,9 @@ export function PlaygroundClient({
     spec.slug === "shimmer-command-pill" ||
     spec.slug === "microchip-pinout-core" ||
     spec.slug === "magnetic-shutter-button" ||
-    spec.slug === "data-beam-hub";
+    spec.slug === "data-beam-hub" ||
+    spec.slug === "agent-reasoning-orbit" ||
+    spec.slug === "token-stream-composer";
   const isMesh = spec.slug === "editorial-mesh-gradient";
 
   return (
@@ -232,6 +238,7 @@ export function PlaygroundClient({
           </div>
 
           {(spec.slug === "bayer-dither-wave" ||
+            spec.slug === "bayer-dither-aurora" ||
             spec.slug === "halftone-spotlight" ||
             spec.slug === "crt-scanline-text" ||
             spec.slug === "ascii-wave-field" ||
@@ -241,6 +248,7 @@ export function PlaygroundClient({
             spec.slug === "motherboard-bus-matrix" ||
             spec.slug === "fiber-optic-stream" ||
             spec.slug === "hexagon-signal-hive" ||
+            spec.slug === "gravity-ripple-grid" ||
             spec.slug === "magnetic-field-lines" ||
             spec.slug === "voronoi-pulse-grid") && (
             <div className="space-y-2">

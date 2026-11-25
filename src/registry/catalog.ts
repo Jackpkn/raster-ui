@@ -1,5 +1,6 @@
 export type RasterCategoryId =
   | "all"
+  | "ai-agents"
   | "data-flow"
   | "circuits"
   | "dither"
@@ -34,6 +35,11 @@ export interface RasterComponentSpec {
 
 export const RASTER_CATEGORIES: RasterCategory[] = [
   { id: "all", label: "All Components", description: "Every zero-dependency procedural visual" },
+  {
+    id: "ai-agents",
+    label: "AI & Agents",
+    description: "Streaming token composers, neural layer graphs, tool-calling orbits, vector clouds, and attention maps",
+  },
   {
     id: "data-flow",
     label: "Data Flow & Streams",
@@ -1218,6 +1224,185 @@ export function ComputeBackdrop() {
 
 export function RealtimeFeed() {
   return <LiveActivityStack accentColor="#f27c63" />;
+}`,
+  },
+  {
+    slug: "token-stream-composer",
+    name: "Token Stream Composer",
+    category: "ai-agents",
+    tagline: "Live streaming LLM token output card with hardware caret and tok/s telemetry.",
+    description:
+      "Streams response chunks word-by-word inside an obsidian terminal card with a live token counter, throughput readout, and clean reduced-motion static fallback.",
+    technique: "Pure React Streaming LLM Card",
+    fileName: "token-stream-composer.tsx",
+    exportName: "TokenStreamComposer",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { TokenStreamComposer } from "@/components/raster/token-stream-composer";
+
+export function AiPreview() {
+  return (
+    <TokenStreamComposer
+      modelLabel="raster-reason-v2"
+      accentColor="#f27c63"
+    />
+  );
+}`,
+  },
+  {
+    slug: "neural-layer-graph",
+    name: "Neural Layer Graph",
+    category: "ai-agents",
+    tagline: "4-layer feed-forward neural network with luminous synaptic pulses firing left-to-right.",
+    description:
+      "Draws a calm multi-layer perceptron topology on Canvas2D where sparse glowing synaptic signals cascade cleanly across layers and light up active neurons.",
+    technique: "Neural Topology Canvas2D",
+    fileName: "neural-layer-graph.tsx",
+    exportName: "NeuralLayerGraph",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { NeuralLayerGraph } from "@/components/raster/neural-layer-graph";
+
+export function InferencePanel() {
+  return (
+    <NeuralLayerGraph
+      accentColor="#f27c63"
+      className="h-64 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "agent-reasoning-orbit",
+    name: "Agent Reasoning Orbit",
+    category: "ai-agents",
+    tagline: "Autonomous agent core firing sequential tool calls out to orbiting capability nodes.",
+    description:
+      "Pure SVG radial tool-calling schematic illustrating an autonomous agent sequentially invoking SEARCH, SQL, CODE, MEMORY, and SHELL tools with zero dependencies.",
+    technique: "Pure SVG Agent Tool Orbit",
+    fileName: "agent-reasoning-orbit.tsx",
+    exportName: "AgentReasoningOrbit",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { AgentReasoningOrbit } from "@/components/raster/agent-reasoning-orbit";
+
+export function AgentHero() {
+  return (
+    <AgentReasoningOrbit
+      agentLabel="AGENT"
+      accentColor="#f27c63"
+      className="h-64 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "embedding-vector-cloud",
+    name: "Embedding Vector Cloud",
+    category: "ai-agents",
+    tagline: "3D rotating semantic embedding clusters with live top-K nearest-neighbor lock-on.",
+    description:
+      "Projects three semantic neighborhoods in 3D space on pure Canvas2D while a drifting query vector dynamically connects to its closest matches.",
+    technique: "3D Vector Space Canvas2D",
+    fileName: "embedding-vector-cloud.tsx",
+    exportName: "EmbeddingVectorCloud",
+    dependencies: [],
+    usageSnippet: `import { EmbeddingVectorCloud } from "@/components/raster/embedding-vector-cloud";
+
+export function RagVisualizer() {
+  return (
+    <EmbeddingVectorCloud
+      accentColor="#f27c63"
+      className="h-64 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "attention-heatmap-matrix",
+    name: "Attention Heatmap Matrix",
+    category: "ai-agents",
+    tagline: "Interactive transformer self-attention matrix with hoverable query/key weight inspection.",
+    description:
+      "Scans automatically across tokenized attention rows while allowing users to hover any (Query, Key) cell to read exact normalized attention weights.",
+    technique: "Interactive Attention Matrix Grid",
+    fileName: "attention-heatmap-matrix.tsx",
+    exportName: "AttentionHeatmapMatrix",
+    dependencies: [],
+    usageSnippet: `import { AttentionHeatmapMatrix } from "@/components/raster/attention-heatmap-matrix";
+
+export function TransformerCard() {
+  return <AttentionHeatmapMatrix accentColor="#f27c63" />;
+}`,
+  },
+  {
+    slug: "bayer-dither-aurora",
+    name: "Bayer Dither Aurora",
+    category: "dither",
+    tagline: "Billowing vertical northern-lights curtains quantized through a 4x4 Bayer matrix.",
+    description:
+      "Combines calm atmospheric aurora waves with unmistakable 1-bit ordered Bayer dithering on pure HTML5 Canvas2D with zero WebGL overhead.",
+    technique: "4x4 Bayer Aurora Canvas2D",
+    fileName: "bayer-dither-aurora.tsx",
+    exportName: "BayerDitherAurora",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { BayerDitherAurora } from "@/components/raster/bayer-dither-aurora";
+
+export function AuroraBanner() {
+  return (
+    <BayerDitherAurora
+      pixelSize={3}
+      accentRgb={[242, 124, 99]}
+      className="h-72 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "isometric-server-rack",
+    name: "Isometric Server Rack",
+    category: "isometric",
+    tagline: "1-bit Bayer-dithered isometric multi-blade server tower with blinking status LEDs.",
+    description:
+      "Crisp hardware-pixelated isometric compute stack cycling active blade indicators for cloud hosting, cluster scaling, and uptime feature cards.",
+    technique: "1-Bit Isometric Rack Canvas2D",
+    fileName: "isometric-server-rack.tsx",
+    exportName: "IsometricServerRack",
+    dependencies: [],
+    usageSnippet: `import { IsometricServerRack } from "@/components/raster/isometric-server-rack";
+
+export function ClusterTile() {
+  return (
+    <IsometricServerRack
+      color="#e7e2da"
+      accentColor="#f27c63"
+      className="h-52 w-full rounded-xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "gravity-ripple-grid",
+    name: "Gravity Ripple Grid",
+    category: "physics",
+    tagline: "Spacetime coordinate dot lattice warped inward by orbiting wells and pointer gravity.",
+    description:
+      "Displaces a clean architectural dot grid smoothly toward a drifting gravitational singularity or live cursor coordinates on pure Canvas2D.",
+    technique: "Gravitational Field Canvas2D",
+    fileName: "gravity-ripple-grid.tsx",
+    exportName: "GravityRippleGrid",
+    dependencies: [],
+    usageSnippet: `import { GravityRippleGrid } from "@/components/raster/gravity-ripple-grid";
+
+export function SpacetimeBackdrop() {
+  return (
+    <GravityRippleGrid
+      gridGap={18}
+      accentColor="#f27c63"
+      className="h-72 w-full rounded-2xl"
+    />
+  );
 }`,
   },
 ];

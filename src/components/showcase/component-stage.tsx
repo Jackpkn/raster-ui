@@ -1,0 +1,468 @@
+"use client";
+
+import { AsciiWaveField } from "@/registry/components/ascii-wave-field";
+import { BayerDitherWave } from "@/registry/components/bayer-dither-wave";
+import { BorderBeamCard } from "@/registry/components/border-beam-card";
+import { ConstellationMesh } from "@/registry/components/constellation-mesh";
+import { CrtScanlineText } from "@/registry/components/crt-scanline-text";
+import { DitherLatencyMeter } from "@/registry/components/dither-latency-meter";
+import { DockMagnifyBar } from "@/registry/components/dock-magnify-bar";
+import { EditorialMeshGradient } from "@/registry/components/editorial-mesh-gradient";
+import { FibonacciDotGlobe } from "@/registry/components/fibonacci-dot-globe";
+import { HalftoneSpotlight } from "@/registry/components/halftone-spotlight";
+import { IsolatedLanesGrid } from "@/registry/components/isolated-lanes-grid";
+import { IsometricFloatingCube } from "@/registry/components/isometric-floating-cube";
+import { MagneticFieldLines } from "@/registry/components/magnetic-field-lines";
+import { MagneticWaveWordmark } from "@/registry/components/magnetic-wave-wordmark";
+import { MarqueeLogoRibbon } from "@/registry/components/marquee-logo-ribbon";
+import { ObsidianStarfield } from "@/registry/components/obsidian-starfield";
+import { PhosphorWaveform } from "@/registry/components/phosphor-waveform";
+import { PixelMatrixStream } from "@/registry/components/pixel-matrix-stream";
+import { PixelSunburstDither } from "@/registry/components/pixel-sunburst-dither";
+import { RadarSweepGrid } from "@/registry/components/radar-sweep-grid";
+import { ShimmerCommandPill } from "@/registry/components/shimmer-command-pill";
+import { SpotlightBentoCard } from "@/registry/components/spotlight-bento-card";
+import { TerminalScrambleText } from "@/registry/components/terminal-scramble-text";
+import { TopographicContours } from "@/registry/components/topographic-contours";
+import { VoronoiPulseGrid } from "@/registry/components/voronoi-pulse-grid";
+import { WireframeTorusKnot } from "@/registry/components/wireframe-torus-knot";
+
+export type PalettePresetId = "terracotta" | "cobalt" | "mono" | "emerald";
+
+export const PALETTE_PRESETS: Record<
+  PalettePresetId,
+  {
+    label: string;
+    baseRgb: [number, number, number];
+    accentRgb: [number, number, number];
+    accentHex: string;
+    monoHex: string;
+  }
+> = {
+  terracotta: {
+    label: "Silver + Terracotta",
+    baseRgb: [238, 234, 228],
+    accentRgb: [242, 124, 99],
+    accentHex: "#f27c63",
+    monoHex: "#e7e2da",
+  },
+  cobalt: {
+    label: "Maritime Cobalt",
+    baseRgb: [112, 150, 255],
+    accentRgb: [152, 186, 255],
+    accentHex: "#4f7cff",
+    monoHex: "#d6e2ff",
+  },
+  mono: {
+    label: "Pure Monochrome",
+    baseRgb: [238, 238, 242],
+    accentRgb: [255, 255, 255],
+    accentHex: "#f4f4f5",
+    monoHex: "#e4e4e7",
+  },
+  emerald: {
+    label: "Phosphor Emerald",
+    baseRgb: [216, 238, 228],
+    accentRgb: [52, 211, 153],
+    accentHex: "#34d399",
+    monoHex: "#d1fae5",
+  },
+};
+
+export interface StageControlProps {
+  slug: string;
+  palette?: PalettePresetId;
+  speed?: number;
+  pixelSize?: number;
+  paused?: boolean;
+  customText?: string;
+  meshVariant?: "obsidian" | "alabaster";
+  compact?: boolean;
+}
+
+export function ComponentStage({
+  slug,
+  palette = "terracotta",
+  speed = 1,
+  pixelSize = 3,
+  paused = false,
+  customText,
+  meshVariant = "obsidian",
+  compact = false,
+}: StageControlProps) {
+  const pal = PALETTE_PRESETS[palette];
+  const heightClass = compact ? "h-48" : "h-[360px] sm:h-[420px]";
+
+  switch (slug) {
+    case "bayer-dither-wave":
+      return (
+        <div className={`relative w-full ${heightClass} overflow-hidden rounded-xl bg-[#08080b]`}>
+          <BayerDitherWave
+            baseRgb={pal.baseRgb}
+            accentRgb={pal.accentRgb}
+            pixelSize={pixelSize}
+            speed={speed}
+            paused={paused}
+            fadeLeft={!compact}
+            className="h-full w-full"
+          />
+          {!compact && (
+            <div className="pointer-events-none absolute inset-y-0 left-0 flex flex-col justify-center px-8 max-w-md">
+              <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#9c978f]">
+                4x4 Ordered Bayer Shader
+              </span>
+              <p className="mt-1 text-2xl font-medium tracking-tight text-[#f8f5f0]">
+                Quiet precision on obsidian.
+              </p>
+            </div>
+          )}
+        </div>
+      );
+
+    case "halftone-spotlight":
+      return (
+        <HalftoneSpotlight
+          gridGap={Math.max(12, Math.min(26, pixelSize * 5))}
+          accentColor={pal.accentHex}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "obsidian-starfield":
+      return (
+        <div className={`relative w-full ${heightClass} overflow-hidden rounded-xl bg-[#08080b]`}>
+          <ObsidianStarfield
+            starRgb={pal.baseRgb}
+            speed={speed}
+            paused={paused}
+            topGlow
+            className="h-full w-full"
+          />
+          <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+            <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 font-mono text-[11px] text-[#e7e2da]">
+              Zero-dependency dust field
+            </span>
+            <p className="mt-3 text-3xl font-semibold tracking-tight text-[#f8f5f0]">
+              Deep Space Canvas
+            </p>
+          </div>
+        </div>
+      );
+
+    case "isometric-floating-cube":
+      return (
+        <IsometricFloatingCube
+          color={pal.monoHex}
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl p-4`}
+        />
+      );
+
+    case "dither-latency-meter":
+      return (
+        <DitherLatencyMeter
+          accentColor={pal.accentHex}
+          trackColor={pal.monoHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl p-4`}
+        />
+      );
+
+    case "isolated-lanes-grid":
+      return (
+        <IsolatedLanesGrid
+          color={pal.monoHex}
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl p-4`}
+        />
+      );
+
+    case "crt-scanline-text":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center rounded-xl bg-[#060609] px-6 text-center`}
+        >
+          <CrtScanlineText
+            text={customText?.trim() || "Ship your craft. We run it."}
+            scanlineSize={Math.max(1, Math.min(4, Math.round(pixelSize * 0.75)))}
+            durationSec={Math.max(4, Math.round(11 / Math.max(0.4, speed)))}
+            highlightColor={pal.monoHex}
+            paused={paused}
+            className={compact ? "text-2xl sm:text-3xl" : "text-4xl sm:text-6xl"}
+          />
+        </div>
+      );
+
+    case "magnetic-wave-wordmark":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center rounded-xl bg-[#060609] px-4`}
+        >
+          <MagneticWaveWordmark
+            text={customText?.trim() || "raster"}
+            letterRgb={pal.baseRgb}
+            liftPx={compact ? 12 : 20}
+            scanlines
+            className="w-full"
+          />
+        </div>
+      );
+
+    case "fibonacci-dot-globe":
+      return (
+        <FibonacciDotGlobe
+          dotCount={compact ? 650 : 1050}
+          dotRgb={pal.baseRgb}
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "editorial-mesh-gradient":
+      return (
+        <div className={`relative w-full ${heightClass} overflow-hidden rounded-xl`}>
+          <EditorialMeshGradient
+            variant={meshVariant}
+            durationSec={Math.max(8, Math.round(18 / Math.max(0.4, speed)))}
+            paused={paused}
+            linenGrain
+            className="h-full w-full"
+          />
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center px-6 text-center">
+            <span
+              className={`font-serif text-3xl ${
+                meshVariant === "alabaster" ? "text-[#1a1715]" : "text-[#f8f5f0]"
+              }`}
+            >
+              Warm Editorial Atmosphere
+            </span>
+          </div>
+        </div>
+      );
+
+    case "ascii-wave-field":
+      return (
+        <AsciiWaveField
+          color={pal.monoHex}
+          accentColor={pal.accentHex}
+          cellSize={Math.max(10, Math.min(18, pixelSize * 4))}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "phosphor-waveform":
+      return (
+        <PhosphorWaveform
+          accentColor={pal.accentHex}
+          secondaryColor={pal.monoHex}
+          speed={speed}
+          paused={paused}
+          showGrid
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "radar-sweep-grid":
+      return (
+        <RadarSweepGrid
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "pixel-matrix-stream":
+      return (
+        <PixelMatrixStream
+          color={pal.monoHex}
+          accentColor={pal.accentHex}
+          blockSize={Math.max(5, Math.min(11, pixelSize * 2 + 1))}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "border-beam-card":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center rounded-xl bg-[#050507] p-5`}
+        >
+          <BorderBeamCard
+            accentColor={pal.accentHex}
+            secondaryColor={pal.monoHex}
+            durationSec={Math.max(3, Math.round(7 / Math.max(0.4, speed)))}
+            paused={paused}
+            className="w-full max-w-md"
+          />
+        </div>
+      );
+
+    case "spotlight-bento-card":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center rounded-xl bg-[#050507] p-5`}
+        >
+          <SpotlightBentoCard
+            glowRgb={pal.accentRgb.join(", ")}
+            radiusPx={compact ? 210 : 300}
+            className="w-full max-w-md"
+          />
+        </div>
+      );
+
+    case "topographic-contours":
+      return (
+        <TopographicContours
+          accentColor={pal.accentHex}
+          levels={compact ? 7 : 9}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "terminal-scramble-text":
+      return (
+        <div
+          className={`flex w-full ${heightClass} flex-col items-center justify-center gap-2 rounded-xl bg-[#060609] px-6 text-center`}
+        >
+          <TerminalScrambleText
+            text={customText?.trim() || "ZERO-DEPENDENCY MOTION"}
+            accentColor={pal.accentHex}
+            color={pal.monoHex}
+            speed={speed}
+            className={compact ? "text-lg sm:text-xl font-semibold" : "text-2xl sm:text-4xl font-semibold"}
+          />
+          <span className="font-mono text-[11px] text-[#8d8880]">
+            Hover or click text to replay cipher decode
+          </span>
+        </div>
+      );
+
+    case "magnetic-field-lines":
+      return (
+        <MagneticFieldLines
+          gridGap={Math.max(16, Math.min(30, pixelSize * 7))}
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "constellation-mesh":
+      return (
+        <ConstellationMesh
+          nodeCount={compact ? 30 : 46}
+          nodeRgb={pal.baseRgb}
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "voronoi-pulse-grid":
+      return (
+        <VoronoiPulseGrid
+          tileSize={Math.max(10, Math.min(22, pixelSize * 4 + 2))}
+          baseRgb={pal.baseRgb}
+          accentRgb={pal.accentRgb}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "wireframe-torus-knot":
+      return (
+        <WireframeTorusKnot
+          strokeRgb={pal.baseRgb}
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "pixel-sunburst-dither":
+      return (
+        <PixelSunburstDither
+          baseRgb={pal.baseRgb}
+          accentRgb={pal.accentRgb}
+          pixelSize={pixelSize}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "dock-magnify-bar":
+      return (
+        <div
+          className={`flex w-full ${heightClass} flex-col items-center justify-center gap-4 rounded-xl bg-[#060609] px-4`}
+        >
+          <DockMagnifyBar accentColor={pal.accentHex} />
+          <span className="font-mono text-[11px] text-[#8d8880]">
+            Glide pointer horizontally across dock items
+          </span>
+        </div>
+      );
+
+    case "marquee-logo-ribbon":
+      return (
+        <div
+          className={`flex w-full ${heightClass} flex-col items-center justify-center gap-3 rounded-xl bg-[#060609] px-2`}
+        >
+          <MarqueeLogoRibbon
+            accentColor={pal.accentHex}
+            durationSec={Math.max(10, Math.round(24 / Math.max(0.4, speed)))}
+            paused={paused}
+            className="w-full"
+          />
+          {!compact && (
+            <MarqueeLogoRibbon
+              accentColor={pal.accentHex}
+              durationSec={Math.max(12, Math.round(28 / Math.max(0.4, speed)))}
+              reverse
+              paused={paused}
+              className="w-full"
+            />
+          )}
+        </div>
+      );
+
+    case "shimmer-command-pill":
+      return (
+        <div
+          className={`flex w-full ${heightClass} flex-col items-center justify-center gap-3 rounded-xl bg-[#060609] px-4`}
+        >
+          <ShimmerCommandPill
+            label={customText?.trim() || "Open Command Palette"}
+            badge="⌘K"
+            accentColor={pal.accentHex}
+            durationSec={Math.max(1.8, 3.6 / Math.max(0.4, speed))}
+            paused={paused}
+          />
+          <span className="font-mono text-[11px] text-[#8d8880]">
+            Pure CSS diagonal metallic specular glint
+          </span>
+        </div>
+      );
+
+    default:
+      return null;
+  }
+}

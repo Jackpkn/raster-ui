@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --surface-canvas: light-dark(#fbf9f6, #060609);
+  --surface-card: light-dark(#ffffff, #0b0b10);
+  --surface-subtle: light-dark(#f0ebe4, #14141c);
+  --border-hairline: light-dark(rgba(26, 23, 21, 0.1), rgba(255, 250, 245, 0.11));
+  --border-strong: light-dark(rgba(26, 23, 21, 0.22), rgba(255, 250, 245, 0.22));
+  --ink-primary: light-dark(#1a1715, #f8f5f0);
+  --ink-muted: light-dark(#57534e, #9c978f);
+  --accent-signal: light-dark(#d95238, #f27c63);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-sans: var(--font-jakarta), "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-serif), "Instrument Serif", Georgia, serif;
+  --font-mono: var(--font-mono), "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-canvas: var(--surface-canvas);
+  --color-card: var(--surface-card);
+  --color-subtle: var(--surface-subtle);
+  --color-hairline: var(--border-hairline);
+  --color-hairline-strong: var(--border-strong);
+  --color-ink: var(--ink-primary);
+  --color-ink-muted: var(--ink-muted);
+  --color-accent: var(--accent-signal);
+}
+
+html,
+body {
+  background-color: var(--surface-canvas);
+  color: var(--ink-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.raster-card {
+  background-color: var(--surface-card);
+  border: 1px solid var(--border-hairline);
+  box-shadow:
+    0 18px 40px -24px light-dark(rgba(26, 23, 21, 0.08), rgba(0, 0, 0, 0.85)),
+    inset 0 1px 0 light-dark(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.08));
+}

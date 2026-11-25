@@ -1,0 +1,19 @@
+# Raster UI
+
+Zero-dependency animated procedural canvas and CSS components for React and Next.js:
+ordered 1-bit Bayer dithering, isometric pixel scenes, CRT scanline typography, interactive cursor wordmarks, 3D Fibonacci dot globes, and painterly editorial meshes.
+
+## Local Development
+
+```bash
+pnpm install
+pnpm dev
+```
+
+Open `http://localhost:3001` to browse all 26 live components across 8 visual families, tweak props in the playground, copy single-file `.tsx` source code, or inspect the `shadcn`-compatible registry at `/r/registry.json`.
+
+## Installing Any Component via shadcn CLI
+
+```bash
+npx shadcn@latest add http://localhost:3001/r/bayer-dither-wave.json
+```

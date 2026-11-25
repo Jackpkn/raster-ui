@@ -63,7 +63,7 @@ export function OscillatorClockRail({
     };
 
     const draw = (timeSec: number) => {
-      const t = paused || prefersReduced ? 1.2 : timeSec * 1.45 * speed;
+      const t = paused || prefersReduced ? 1.2 : Math.max(0, timeSec) * 1.45 * speed;
       ctx.clearRect(0, 0, width, height);
 
       const labelW = 46;

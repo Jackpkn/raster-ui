@@ -115,10 +115,10 @@ export function IsometricServerRack({
     };
 
     const draw = (timeSec: number) => {
-      const t = paused || prefersReduced ? 1 : timeSec * 1.4 * speed;
+      const t = paused || prefersReduced ? 1 : Math.max(0, timeSec) * 1.4 * speed;
       ctx.clearRect(0, 0, w, h);
 
-      const activeBlade = Math.floor(t) % 4;
+      const activeBlade = ((Math.floor(t) % 4) + 4) % 4;
       for (let b = 0; b < 4; b++) {
         drawBlade(b * 12, b === activeBlade);
       }

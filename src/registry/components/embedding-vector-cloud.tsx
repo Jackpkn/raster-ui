@@ -87,7 +87,7 @@ export function EmbeddingVectorCloud({
     };
 
     const draw = (timeSec: number) => {
-      const t = paused || prefersReduced ? 1.1 : timeSec * 0.42 * speed;
+      const t = paused || prefersReduced ? 1.1 : Math.max(0, timeSec) * 0.42 * speed;
       ctx.clearRect(0, 0, width, height);
 
       const cx = width / 2;
@@ -108,7 +108,7 @@ export function EmbeddingVectorCloud({
       };
 
       // Active drifting query vector orbiting through embedding space
-      const activeCluster = Math.floor(t * 0.5) % 3;
+      const activeCluster = ((Math.floor(t * 0.5) % 3) + 3) % 3;
       const [qx0, qy0, qz0] = centers[activeCluster]!;
       const queryVec = {
         x: qx0 + Math.cos(t * 1.4) * 0.08,

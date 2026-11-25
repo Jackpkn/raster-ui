@@ -6,6 +6,7 @@ export type RasterCategoryId =
   | "physics"
   | "surfaces"
   | "ui-motion"
+  | "loaders"
   | "typography"
   | "spatial";
 
@@ -59,7 +60,12 @@ export const RASTER_CATEGORIES: RasterCategory[] = [
   {
     id: "ui-motion",
     label: "UI Micro-Motion",
-    description: "Magnetic docks, edge-feathered marquee tickers, and metallic command pills",
+    description: "Magnetic docks, animated CLI steppers, marquees, and metallic command pills",
+  },
+  {
+    id: "loaders",
+    label: "Loaders & Progress",
+    description: "1-bit pixel dissolve matrices and SVG counter-harmonic orbital telemetry rings",
   },
   {
     id: "typography",
@@ -658,6 +664,189 @@ export function HeroCta() {
     <ShimmerCommandPill
       label="Open Command Palette"
       badge="⌘K"
+      accentColor="#f27c63"
+    />
+  );
+}`,
+  },
+  {
+    slug: "tilt-glass-card",
+    name: "Tilt Glass Card",
+    category: "surfaces",
+    tagline: "3D perspective pointer-tilt obsidian card with angle-tracking specular glare.",
+    description:
+      "Tracks pointer coordinates to rotate a crisp hairline obsidian surface in 3D perspective space while casting a dynamic radial glare sheen with zero animation libraries.",
+    technique: "CSS 3D Perspective + Specular Glare",
+    fileName: "tilt-glass-card.tsx",
+    exportName: "TiltGlassCard",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { TiltGlassCard } from "@/components/raster/tilt-glass-card";
+
+export function PricingSpotlight() {
+  return (
+    <TiltGlassCard maxTiltDeg={10} accentColor="#f27c63">
+      <h3 className="text-lg font-semibold text-white">Pro Telemetry</h3>
+    </TiltGlassCard>
+  );
+}`,
+  },
+  {
+    slug: "terminal-command-stepper",
+    name: "Terminal Command Stepper",
+    category: "ui-motion",
+    tagline: "Animated agent & CLI terminal window stepping through live output with a blinking cursor.",
+    description:
+      "Sequentially reveals shell commands and status badges inside an obsidian terminal chrome with a hardware-stepped blinking cursor and reduced-motion static reveal.",
+    technique: "Pure React CLI Stepper + CSS Cursor",
+    fileName: "terminal-command-stepper.tsx",
+    exportName: "TerminalCommandStepper",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { TerminalCommandStepper } from "@/components/raster/terminal-command-stepper";
+
+export function InstallPreview() {
+  return (
+    <TerminalCommandStepper
+      title="raster-cli"
+      accentColor="#f27c63"
+    />
+  );
+}`,
+  },
+  {
+    slug: "pixel-dissolve-loader",
+    name: "Pixel Dissolve Loader",
+    category: "loaders",
+    tagline: "1-bit LED pixel matrix sweeping across diagonal harmonic interference waves.",
+    description:
+      "Crisp square LED matrix loader rendered on Canvas2D that illuminates peak interference cells in your brand accent while automatically pausing off-screen.",
+    technique: "1-Bit Matrix Canvas2D Loader",
+    fileName: "pixel-dissolve-loader.tsx",
+    exportName: "PixelDissolveLoader",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { PixelDissolveLoader } from "@/components/raster/pixel-dissolve-loader";
+
+export function PendingState() {
+  return (
+    <PixelDissolveLoader
+      gridSize={7}
+      accentColor="#f27c63"
+      sizePx={92}
+    />
+  );
+}`,
+  },
+  {
+    slug: "orbital-ring-loader",
+    name: "Orbital Ring Loader",
+    category: "loaders",
+    tagline: "Pure SVG counter-harmonic dashed orbital rings rotating around a glowing telemetry beacon.",
+    description:
+      "Zero JavaScript runtime loop: three concentric SVG rings spin in opposing harmonic periods via GPU-composited CSS transforms around a central indicator dot.",
+    technique: "Pure SVG + CSS Orbital Rings",
+    fileName: "orbital-ring-loader.tsx",
+    exportName: "OrbitalRingLoader",
+    dependencies: [],
+    usageSnippet: `import { OrbitalRingLoader } from "@/components/raster/orbital-ring-loader";
+
+export function SyncStatus() {
+  return (
+    <OrbitalRingLoader
+      sizePx={96}
+      accentColor="#f27c63"
+    />
+  );
+}`,
+  },
+  {
+    slug: "chromatic-noise-veil",
+    name: "Chromatic Noise Veil",
+    category: "dither",
+    tagline: "Drifting obsidian duotone light beams layered beneath animated analog film grain.",
+    description:
+      "Synthesizes crisp low-contrast monochrome film noise on an off-grid pixel canvas blended over slow-drifting radial light lobes for tactile editorial headers.",
+    technique: "Procedural Film Grain Canvas2D + CSS Veil",
+    fileName: "chromatic-noise-veil.tsx",
+    exportName: "ChromaticNoiseVeil",
+    dependencies: [],
+    usageSnippet: `import { ChromaticNoiseVeil } from "@/components/raster/chromatic-noise-veil";
+
+export function AtmosphericBackdrop() {
+  return (
+    <ChromaticNoiseVeil
+      accentColor="#f27c63"
+      grainOpacity={0.14}
+      className="h-72 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "vector-circuit-trace",
+    name: "Vector Circuit Trace",
+    category: "telemetry",
+    tagline: "Architectural 45-degree routed PCB bus traces feeding luminous data pulses into a compute die.",
+    description:
+      "Draws precision solder pads, orthogonal silicon traces, and gradient-tailed signal packets converging continuously toward a central chip outline on pure Canvas2D.",
+    technique: "Vector Bus Routing Canvas2D",
+    fileName: "vector-circuit-trace.tsx",
+    exportName: "VectorCircuitTrace",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { VectorCircuitTrace } from "@/components/raster/vector-circuit-trace";
+
+export function ComputeDiagram() {
+  return (
+    <VectorCircuitTrace
+      accentColor="#f27c63"
+      className="h-64 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "bento-sparkline-tile",
+    name: "Bento Sparkline Tile",
+    category: "telemetry",
+    tagline: "Interactive zero-dependency Canvas2D sparkline card with crosshair pointer scrub readout.",
+    description:
+      "Combines a gradient-filled vector area chart, live delta percentage badge, and smooth pointer-scrubbing hairline crosshair inside a dark bento KPI tile.",
+    technique: "Interactive Scrubbing Canvas2D Chart",
+    fileName: "bento-sparkline-tile.tsx",
+    exportName: "BentoSparklineTile",
+    dependencies: [],
+    usageSnippet: `import { BentoSparklineTile } from "@/components/raster/bento-sparkline-tile";
+
+export function ThroughputKpi() {
+  return (
+    <BentoSparklineTile
+      label="Edge Throughput"
+      unit="k/s"
+      accentColor="#f27c63"
+    />
+  );
+}`,
+  },
+  {
+    slug: "split-flap-counter",
+    name: "Split Flap Counter",
+    category: "typography",
+    tagline: "Mechanical Braun-style split-flap numeric ticker with center hinge and tabular glyphs.",
+    description:
+      "Cycles padded monospace values across split-hinged dark mechanical tiles with crisp specular top bevels and an accent telemetry status indicator.",
+    technique: "Pure React Split-Flap Mechanical Board",
+    fileName: "split-flap-counter.tsx",
+    exportName: "SplitFlapCounter",
+    dependencies: [],
+    usageSnippet: `import { SplitFlapCounter } from "@/components/raster/split-flap-counter";
+
+export function LiveMetricsBoard() {
+  return (
+    <SplitFlapCounter
+      values={["00184", "00429", "01280", "03642"]}
+      caption="LIVE VERIFIED ROLES INDEXED"
       accentColor="#f27c63"
     />
   );

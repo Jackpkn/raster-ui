@@ -2,7 +2,9 @@
 
 import { AsciiWaveField } from "@/registry/components/ascii-wave-field";
 import { BayerDitherWave } from "@/registry/components/bayer-dither-wave";
+import { BentoSparklineTile } from "@/registry/components/bento-sparkline-tile";
 import { BorderBeamCard } from "@/registry/components/border-beam-card";
+import { ChromaticNoiseVeil } from "@/registry/components/chromatic-noise-veil";
 import { ConstellationMesh } from "@/registry/components/constellation-mesh";
 import { CrtScanlineText } from "@/registry/components/crt-scanline-text";
 import { DitherLatencyMeter } from "@/registry/components/dither-latency-meter";
@@ -16,14 +18,20 @@ import { MagneticFieldLines } from "@/registry/components/magnetic-field-lines";
 import { MagneticWaveWordmark } from "@/registry/components/magnetic-wave-wordmark";
 import { MarqueeLogoRibbon } from "@/registry/components/marquee-logo-ribbon";
 import { ObsidianStarfield } from "@/registry/components/obsidian-starfield";
+import { OrbitalRingLoader } from "@/registry/components/orbital-ring-loader";
 import { PhosphorWaveform } from "@/registry/components/phosphor-waveform";
+import { PixelDissolveLoader } from "@/registry/components/pixel-dissolve-loader";
 import { PixelMatrixStream } from "@/registry/components/pixel-matrix-stream";
 import { PixelSunburstDither } from "@/registry/components/pixel-sunburst-dither";
 import { RadarSweepGrid } from "@/registry/components/radar-sweep-grid";
 import { ShimmerCommandPill } from "@/registry/components/shimmer-command-pill";
+import { SplitFlapCounter } from "@/registry/components/split-flap-counter";
 import { SpotlightBentoCard } from "@/registry/components/spotlight-bento-card";
+import { TerminalCommandStepper } from "@/registry/components/terminal-command-stepper";
 import { TerminalScrambleText } from "@/registry/components/terminal-scramble-text";
+import { TiltGlassCard } from "@/registry/components/tilt-glass-card";
 import { TopographicContours } from "@/registry/components/topographic-contours";
+import { VectorCircuitTrace } from "@/registry/components/vector-circuit-trace";
 import { VoronoiPulseGrid } from "@/registry/components/voronoi-pulse-grid";
 import { WireframeTorusKnot } from "@/registry/components/wireframe-torus-knot";
 
@@ -459,6 +467,128 @@ export function ComponentStage({
           <span className="font-mono text-[11px] text-[#8d8880]">
             Pure CSS diagonal metallic specular glint
           </span>
+        </div>
+      );
+
+    case "tilt-glass-card":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center overflow-hidden rounded-xl bg-[#050507] p-4`}
+        >
+          <TiltGlassCard
+            accentColor={pal.accentHex}
+            className={compact ? "w-full max-w-sm scale-[0.9]" : "w-full max-w-md"}
+          />
+        </div>
+      );
+
+    case "terminal-command-stepper":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center overflow-hidden rounded-xl bg-[#050507] p-4`}
+        >
+          <TerminalCommandStepper
+            accentColor={pal.accentHex}
+            speed={speed}
+            paused={paused}
+            className={compact ? "w-full max-w-md scale-[0.86]" : "w-full max-w-lg"}
+          />
+        </div>
+      );
+
+    case "pixel-dissolve-loader":
+      return (
+        <div
+          className={`flex w-full ${heightClass} flex-col items-center justify-center gap-3 rounded-xl bg-[#060609] px-4`}
+        >
+          <PixelDissolveLoader
+            gridSize={Math.max(5, Math.min(9, pixelSize * 2 + 1))}
+            color={pal.monoHex}
+            accentColor={pal.accentHex}
+            sizePx={compact ? 84 : 136}
+            speed={speed}
+            paused={paused}
+          />
+          <span className="font-mono text-[11px] text-[#8d8880]">
+            1-bit harmonic LED pixel matrix
+          </span>
+        </div>
+      );
+
+    case "orbital-ring-loader":
+      return (
+        <div
+          className={`flex w-full ${heightClass} flex-col items-center justify-center gap-3 rounded-xl bg-[#060609] px-4`}
+        >
+          <OrbitalRingLoader
+            sizePx={compact ? 92 : 148}
+            accentColor={pal.accentHex}
+            speed={speed}
+            paused={paused}
+          />
+          <span className="font-mono text-[11px] text-[#8d8880]">
+            Pure SVG counter-harmonic telemetry rings
+          </span>
+        </div>
+      );
+
+    case "chromatic-noise-veil":
+      return (
+        <div className={`relative w-full ${heightClass} overflow-hidden rounded-xl bg-[#060609]`}>
+          <ChromaticNoiseVeil
+            accentColor={pal.accentHex}
+            secondaryColor={pal.monoHex}
+            speed={speed}
+            paused={paused}
+            className="h-full w-full"
+          />
+          <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
+            <span className="font-mono text-[10.5px] uppercase tracking-[0.16em] text-[#9c978f]">
+              35mm Analog Grain + Duotone Veil
+            </span>
+            {!compact && (
+              <p className="mt-2 font-serif text-3xl text-[#f8f5f0]">
+                Quiet Tactile Atmosphere
+              </p>
+            )}
+          </div>
+        </div>
+      );
+
+    case "vector-circuit-trace":
+      return (
+        <VectorCircuitTrace
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "bento-sparkline-tile":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center overflow-hidden rounded-xl bg-[#050507] p-4`}
+        >
+          <BentoSparklineTile
+            accentColor={pal.accentHex}
+            className={compact ? "w-full max-w-md scale-[0.86]" : "w-full max-w-md"}
+          />
+        </div>
+      );
+
+    case "split-flap-counter":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center rounded-xl bg-[#060609] px-4`}
+        >
+          <SplitFlapCounter
+            accentColor={pal.accentHex}
+            caption={customText?.trim() || "LIVE VERIFIED ROLES INDEXED"}
+            speed={speed}
+            paused={paused}
+            className={compact ? "scale-90" : ""}
+          />
         </div>
       );
 

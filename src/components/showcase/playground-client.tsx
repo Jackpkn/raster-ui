@@ -32,7 +32,9 @@ export function PlaygroundClient({
         ? "ZERO-DEPENDENCY MOTION"
         : spec.slug === "shimmer-command-pill"
           ? "Open Command Palette"
-          : "Ship your craft. We run it."
+          : spec.slug === "split-flap-counter"
+            ? "LIVE VERIFIED ROLES INDEXED"
+            : "Ship your craft. We run it."
   );
   const [meshVariant, setMeshVariant] = useState<"obsidian" | "alabaster">("obsidian");
   const [codeTab, setCodeTab] = useState<"usage" | "source" | "cli">("usage");
@@ -224,6 +226,7 @@ export function PlaygroundClient({
             spec.slug === "ascii-wave-field" ||
             spec.slug === "pixel-matrix-stream" ||
             spec.slug === "pixel-sunburst-dither" ||
+            spec.slug === "pixel-dissolve-loader" ||
             spec.slug === "magnetic-field-lines" ||
             spec.slug === "voronoi-pulse-grid") && (
             <div className="space-y-2">

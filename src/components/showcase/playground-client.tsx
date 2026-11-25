@@ -285,20 +285,20 @@ export function PlaygroundClient({
           )}
 
           <div className="border-t border-hairline pt-4 space-y-2 text-xs text-ink-muted">
-            <div className="flex justify-between">
-              <span>Technique</span>
-              <span className="font-mono text-ink">{spec.technique}</span>
+            <div className="flex items-center justify-between gap-3">
+              <span className="shrink-0">Technique</span>
+              <span className="truncate text-right font-mono text-ink">{spec.technique}</span>
             </div>
-            <div className="flex justify-between">
-              <span>External deps</span>
+            <div className="flex items-center justify-between gap-3">
+              <span className="shrink-0">External deps</span>
               <span className="font-mono text-emerald-400">None (0 packages)</span>
             </div>
-            <div className="flex justify-between">
-              <span>Registry JSON</span>
+            <div className="flex items-center justify-between gap-3">
+              <span className="shrink-0">Registry JSON</span>
               <Link
                 href={`/r/${spec.slug}.json`}
                 target="_blank"
-                className="font-mono text-ink underline underline-offset-2"
+                className="truncate font-mono text-ink underline underline-offset-2"
               >
                 /r/{spec.slug}.json
               </Link>

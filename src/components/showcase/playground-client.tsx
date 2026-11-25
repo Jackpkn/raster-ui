@@ -38,7 +38,9 @@ export function PlaygroundClient({
               ? "R-01"
               : spec.slug === "magnetic-shutter-button"
                 ? "Deploy Circuit"
-                : "Ship your craft. We run it."
+                : spec.slug === "data-beam-hub"
+                  ? "CORE"
+                  : "Ship your craft. We run it."
   );
   const [meshVariant, setMeshVariant] = useState<"obsidian" | "alabaster">("obsidian");
   const [codeTab, setCodeTab] = useState<"usage" | "source" | "cli">("usage");
@@ -60,7 +62,8 @@ export function PlaygroundClient({
     spec.category === "typography" ||
     spec.slug === "shimmer-command-pill" ||
     spec.slug === "microchip-pinout-core" ||
-    spec.slug === "magnetic-shutter-button";
+    spec.slug === "magnetic-shutter-button" ||
+    spec.slug === "data-beam-hub";
   const isMesh = spec.slug === "editorial-mesh-gradient";
 
   return (
@@ -236,6 +239,8 @@ export function PlaygroundClient({
             spec.slug === "pixel-sunburst-dither" ||
             spec.slug === "pixel-dissolve-loader" ||
             spec.slug === "motherboard-bus-matrix" ||
+            spec.slug === "fiber-optic-stream" ||
+            spec.slug === "hexagon-signal-hive" ||
             spec.slug === "magnetic-field-lines" ||
             spec.slug === "voronoi-pulse-grid") && (
             <div className="space-y-2">

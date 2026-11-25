@@ -1,5 +1,6 @@
 export type RasterCategoryId =
   | "all"
+  | "data-flow"
   | "circuits"
   | "dither"
   | "isometric"
@@ -33,6 +34,11 @@ export interface RasterComponentSpec {
 
 export const RASTER_CATEGORIES: RasterCategory[] = [
   { id: "all", label: "All Components", description: "Every zero-dependency procedural visual" },
+  {
+    id: "data-flow",
+    label: "Data Flow & Streams",
+    description: "Animated multi-node beams, fiber ribbons, packet queues, prisms, and trace waterfalls",
+  },
   {
     id: "circuits",
     label: "Circuits & Silicon",
@@ -1038,6 +1044,180 @@ export function PrimaryAction() {
       accentColor="#f27c63"
     />
   );
+}`,
+  },
+  {
+    slug: "data-beam-hub",
+    name: "Data Beam Hub",
+    category: "data-flow",
+    tagline: "Multi-input to multi-output SVG animated beams flowing through a central routing core.",
+    description:
+      "Pure SVG cubic-Bezier data conduits streaming luminous packets from three upstream sources through a central hub node to two downstream targets.",
+    technique: "Pure SVG Cubic-Bezier Data Beams",
+    fileName: "data-beam-hub.tsx",
+    exportName: "DataBeamHub",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { DataBeamHub } from "@/components/raster/data-beam-hub";
+
+export function ArchitectureVisual() {
+  return (
+    <DataBeamHub
+      hubLabel="CORE"
+      accentColor="#f27c63"
+      className="h-64 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "fiber-optic-stream",
+    name: "Fiber Optic Stream",
+    category: "data-flow",
+    tagline: "Undulating optical data ribbons carrying glowing photon bursts with pointer deflection.",
+    description:
+      "Smooth sinusoidal optical fiber splines sweep gently across obsidian while glowing data streaks race across each strand and deflect softly around the cursor.",
+    technique: "Optical Spline Stream Canvas2D",
+    fileName: "fiber-optic-stream.tsx",
+    exportName: "FiberOpticStream",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { FiberOpticStream } from "@/components/raster/fiber-optic-stream";
+
+export function PipelineBanner() {
+  return (
+    <FiberOpticStream
+      strands={8}
+      accentColor="#f27c63"
+      className="h-72 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "data-funnel-prism",
+    name: "Data Funnel Prism",
+    category: "data-flow",
+    tagline: "Noisy raw incoming streams converging through a central optical gate into clean rails.",
+    description:
+      "Visualizes ETL ingestion, RAG ranking, or signal filtering as scattered input particles pass through a central prism gate and emerge as structured high-signal streams.",
+    technique: "Stream Filtering Particle Canvas2D",
+    fileName: "data-funnel-prism.tsx",
+    exportName: "DataFunnelPrism",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { DataFunnelPrism } from "@/components/raster/data-funnel-prism";
+
+export function FilterDiagram() {
+  return (
+    <DataFunnelPrism
+      accentColor="#f27c63"
+      className="h-64 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "mesh-topology-flow",
+    name: "Mesh Topology Flow",
+    category: "data-flow",
+    tagline: "Distributed multi-region cluster graph with directional packet hops and arrival ripples.",
+    description:
+      "Connects regional compute nodes (US-E, EU-W, AP-S, EDGE, CORE, CACHE) with clean vector links carrying continuous multi-hop telemetry packets on Canvas2D.",
+    technique: "Cluster Graph Routing Canvas2D",
+    fileName: "mesh-topology-flow.tsx",
+    exportName: "MeshTopologyFlow",
+    dependencies: [],
+    usageSnippet: `import { MeshTopologyFlow } from "@/components/raster/mesh-topology-flow";
+
+export function GlobalMeshCard() {
+  return (
+    <MeshTopologyFlow
+      accentColor="#f27c63"
+      className="h-64 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "packet-queue-conveyor",
+    name: "Packet Queue Conveyor",
+    category: "data-flow",
+    tagline: "Four parallel ingestion rails streaming discrete framed packets past a scanner beam.",
+    description:
+      "Illustrates streaming queues (INGEST, PARSE, INDEX, EMIT) where framed data blocks glide continuously across rails and verify dynamically at a central scan gate.",
+    technique: "Multi-Lane Queue Canvas2D",
+    fileName: "packet-queue-conveyor.tsx",
+    exportName: "PacketQueueConveyor",
+    dependencies: [],
+    usageSnippet: `import { PacketQueueConveyor } from "@/components/raster/packet-queue-conveyor";
+
+export function QueueVisual() {
+  return (
+    <PacketQueueConveyor
+      accentColor="#f27c63"
+      className="h-64 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "event-waterfall-stream",
+    name: "Event Waterfall Stream",
+    category: "data-flow",
+    tagline: "Distributed trace waterfall timeline cycling live highlights across microservice spans.",
+    description:
+      "Clean observability span timeline showing staggered millisecond execution bars with glowing critical-path highlights and zero external dependencies.",
+    technique: "Pure React Trace Waterfall",
+    fileName: "event-waterfall-stream.tsx",
+    exportName: "EventWaterfallStream",
+    dependencies: [],
+    usageSnippet: `import { EventWaterfallStream } from "@/components/raster/event-waterfall-stream";
+
+export function ObservabilityCard() {
+  return (
+    <EventWaterfallStream accentColor="#f27c63" />
+  );
+}`,
+  },
+  {
+    slug: "hexagon-signal-hive",
+    name: "Hexagon Signal Hive",
+    category: "circuits",
+    tagline: "Obsidian hexagonal compute lattice pulsing with radial signal waves and pointer ripples.",
+    description:
+      "Architectural honeycomb substrate where luminous radial waves travel cleanly from cell to cell and lock onto pointer movement on pure Canvas2D.",
+    technique: "Hexagonal Wave Lattice Canvas2D",
+    fileName: "hexagon-signal-hive.tsx",
+    exportName: "HexagonSignalHive",
+    dependencies: [],
+    usageSnippet: `import { HexagonSignalHive } from "@/components/raster/hexagon-signal-hive";
+
+export function ComputeBackdrop() {
+  return (
+    <HexagonSignalHive
+      hexRadius={17}
+      accentColor="#f27c63"
+      className="h-64 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "live-activity-stack",
+    name: "Live Activity Stack",
+    category: "ui-motion",
+    tagline: "Flowing real-time stacked event cards sliding smoothly into focus with depth fade.",
+    description:
+      "Pure React and CSS live activity feed rotating telemetry events into the top slot with subtle scale depth, accent border highlights, and reduced-motion support.",
+    technique: "Pure React + CSS Depth Stack",
+    fileName: "live-activity-stack.tsx",
+    exportName: "LiveActivityStack",
+    dependencies: [],
+    usageSnippet: `import { LiveActivityStack } from "@/components/raster/live-activity-stack";
+
+export function RealtimeFeed() {
+  return <LiveActivityStack accentColor="#f27c63" />;
 }`,
   },
 ];

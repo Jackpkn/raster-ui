@@ -7,23 +7,31 @@ import { BorderBeamCard } from "@/registry/components/border-beam-card";
 import { ChromaticNoiseVeil } from "@/registry/components/chromatic-noise-veil";
 import { ConstellationMesh } from "@/registry/components/constellation-mesh";
 import { CrtScanlineText } from "@/registry/components/crt-scanline-text";
+import { DataBeamHub } from "@/registry/components/data-beam-hub";
+import { DataFunnelPrism } from "@/registry/components/data-funnel-prism";
 import { DitherLatencyMeter } from "@/registry/components/dither-latency-meter";
 import { DockMagnifyBar } from "@/registry/components/dock-magnify-bar";
 import { EditorialMeshGradient } from "@/registry/components/editorial-mesh-gradient";
+import { EventWaterfallStream } from "@/registry/components/event-waterfall-stream";
+import { FiberOpticStream } from "@/registry/components/fiber-optic-stream";
 import { FibonacciDotGlobe } from "@/registry/components/fibonacci-dot-globe";
 import { HalftoneSpotlight } from "@/registry/components/halftone-spotlight";
+import { HexagonSignalHive } from "@/registry/components/hexagon-signal-hive";
 import { IsolatedLanesGrid } from "@/registry/components/isolated-lanes-grid";
 import { IsometricCircuitChip } from "@/registry/components/isometric-circuit-chip";
 import { IsometricFloatingCube } from "@/registry/components/isometric-floating-cube";
+import { LiveActivityStack } from "@/registry/components/live-activity-stack";
 import { MagneticFieldLines } from "@/registry/components/magnetic-field-lines";
 import { MagneticShutterButton } from "@/registry/components/magnetic-shutter-button";
 import { MagneticWaveWordmark } from "@/registry/components/magnetic-wave-wordmark";
 import { MarqueeLogoRibbon } from "@/registry/components/marquee-logo-ribbon";
+import { MeshTopologyFlow } from "@/registry/components/mesh-topology-flow";
 import { MicrochipPinoutCore } from "@/registry/components/microchip-pinout-core";
 import { MotherboardBusMatrix } from "@/registry/components/motherboard-bus-matrix";
 import { ObsidianStarfield } from "@/registry/components/obsidian-starfield";
 import { OrbitalRingLoader } from "@/registry/components/orbital-ring-loader";
 import { OscillatorClockRail } from "@/registry/components/oscillator-clock-rail";
+import { PacketQueueConveyor } from "@/registry/components/packet-queue-conveyor";
 import { PcbLogicGates } from "@/registry/components/pcb-logic-gates";
 import { PhosphorWaveform } from "@/registry/components/phosphor-waveform";
 import { PixelDissolveLoader } from "@/registry/components/pixel-dissolve-loader";
@@ -697,6 +705,97 @@ export function ComponentStage({
           <span className="font-mono text-[11px] text-[#8d8880]">
             Hover &amp; move pointer for magnetic shutter pull
           </span>
+        </div>
+      );
+
+    case "data-beam-hub":
+      return (
+        <DataBeamHub
+          hubLabel={customText?.trim() || "CORE"}
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl p-2`}
+        />
+      );
+
+    case "fiber-optic-stream":
+      return (
+        <FiberOpticStream
+          accentColor={pal.accentHex}
+          strands={Math.max(5, Math.min(12, pixelSize * 2 + 2))}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "data-funnel-prism":
+      return (
+        <DataFunnelPrism
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "mesh-topology-flow":
+      return (
+        <MeshTopologyFlow
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "packet-queue-conveyor":
+      return (
+        <PacketQueueConveyor
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "event-waterfall-stream":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center overflow-hidden rounded-xl bg-[#050507] p-4`}
+        >
+          <EventWaterfallStream
+            accentColor={pal.accentHex}
+            speed={speed}
+            paused={paused}
+            className={compact ? "max-w-md scale-[0.9]" : "max-w-lg"}
+          />
+        </div>
+      );
+
+    case "hexagon-signal-hive":
+      return (
+        <HexagonSignalHive
+          accentColor={pal.accentHex}
+          hexRadius={Math.max(12, Math.min(26, pixelSize * 5 + 2))}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "live-activity-stack":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center overflow-hidden rounded-xl bg-[#050507] p-4`}
+        >
+          <LiveActivityStack
+            accentColor={pal.accentHex}
+            speed={speed}
+            paused={paused}
+            className={compact ? "scale-[0.88]" : ""}
+          />
         </div>
       );
 

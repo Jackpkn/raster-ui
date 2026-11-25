@@ -13,20 +13,28 @@ import { EditorialMeshGradient } from "@/registry/components/editorial-mesh-grad
 import { FibonacciDotGlobe } from "@/registry/components/fibonacci-dot-globe";
 import { HalftoneSpotlight } from "@/registry/components/halftone-spotlight";
 import { IsolatedLanesGrid } from "@/registry/components/isolated-lanes-grid";
+import { IsometricCircuitChip } from "@/registry/components/isometric-circuit-chip";
 import { IsometricFloatingCube } from "@/registry/components/isometric-floating-cube";
 import { MagneticFieldLines } from "@/registry/components/magnetic-field-lines";
+import { MagneticShutterButton } from "@/registry/components/magnetic-shutter-button";
 import { MagneticWaveWordmark } from "@/registry/components/magnetic-wave-wordmark";
 import { MarqueeLogoRibbon } from "@/registry/components/marquee-logo-ribbon";
+import { MicrochipPinoutCore } from "@/registry/components/microchip-pinout-core";
+import { MotherboardBusMatrix } from "@/registry/components/motherboard-bus-matrix";
 import { ObsidianStarfield } from "@/registry/components/obsidian-starfield";
 import { OrbitalRingLoader } from "@/registry/components/orbital-ring-loader";
+import { OscillatorClockRail } from "@/registry/components/oscillator-clock-rail";
+import { PcbLogicGates } from "@/registry/components/pcb-logic-gates";
 import { PhosphorWaveform } from "@/registry/components/phosphor-waveform";
 import { PixelDissolveLoader } from "@/registry/components/pixel-dissolve-loader";
 import { PixelMatrixStream } from "@/registry/components/pixel-matrix-stream";
 import { PixelSunburstDither } from "@/registry/components/pixel-sunburst-dither";
 import { RadarSweepGrid } from "@/registry/components/radar-sweep-grid";
 import { ShimmerCommandPill } from "@/registry/components/shimmer-command-pill";
+import { SiliconWaferGrid } from "@/registry/components/silicon-wafer-grid";
 import { SplitFlapCounter } from "@/registry/components/split-flap-counter";
 import { SpotlightBentoCard } from "@/registry/components/spotlight-bento-card";
+import { StepperProgressRail } from "@/registry/components/stepper-progress-rail";
 import { TerminalCommandStepper } from "@/registry/components/terminal-command-stepper";
 import { TerminalScrambleText } from "@/registry/components/terminal-scramble-text";
 import { TiltGlassCard } from "@/registry/components/tilt-glass-card";
@@ -589,6 +597,106 @@ export function ComponentStage({
             paused={paused}
             className={compact ? "scale-90" : ""}
           />
+        </div>
+      );
+
+    case "silicon-wafer-grid":
+      return (
+        <SiliconWaferGrid
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "pcb-logic-gates":
+      return (
+        <div className={`relative w-full ${heightClass} overflow-hidden rounded-xl bg-[#060609]`}>
+          <PcbLogicGates
+            accentColor={pal.accentHex}
+            speed={speed}
+            paused={paused}
+            className="h-full w-full p-2"
+          />
+          <span className="pointer-events-none absolute bottom-2 right-3 font-mono text-[10px] text-[#7e7a72]">
+            Click A / B / CLK
+          </span>
+        </div>
+      );
+
+    case "motherboard-bus-matrix":
+      return (
+        <MotherboardBusMatrix
+          accentColor={pal.accentHex}
+          lanes={Math.max(6, Math.min(14, pixelSize * 3))}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "microchip-pinout-core":
+      return (
+        <MicrochipPinoutCore
+          chipLabel={customText?.trim() || "R-01"}
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "oscillator-clock-rail":
+      return (
+        <OscillatorClockRail
+          accentColor={pal.accentHex}
+          railColor={pal.monoHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "isometric-circuit-chip":
+      return (
+        <IsometricCircuitChip
+          color={pal.monoHex}
+          accentColor={pal.accentHex}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl p-3`}
+        />
+      );
+
+    case "stepper-progress-rail":
+      return (
+        <div
+          className={`flex w-full ${heightClass} flex-col items-center justify-center gap-4 rounded-xl bg-[#060609] px-4`}
+        >
+          <StepperProgressRail
+            accentColor={pal.accentHex}
+            speed={speed}
+            paused={paused}
+          />
+          <span className="font-mono text-[11px] text-[#8d8880]">
+            Continuous hardware pipeline stepper
+          </span>
+        </div>
+      );
+
+    case "magnetic-shutter-button":
+      return (
+        <div
+          className={`flex w-full ${heightClass} flex-col items-center justify-center gap-3 rounded-xl bg-[#060609] px-4`}
+        >
+          <MagneticShutterButton
+            label={customText?.trim() || "Deploy Circuit"}
+            accentColor={pal.accentHex}
+          />
+          <span className="font-mono text-[11px] text-[#8d8880]">
+            Hover &amp; move pointer for magnetic shutter pull
+          </span>
         </div>
       );
 

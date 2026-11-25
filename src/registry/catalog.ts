@@ -1,5 +1,6 @@
 export type RasterCategoryId =
   | "all"
+  | "circuits"
   | "dither"
   | "isometric"
   | "telemetry"
@@ -32,6 +33,11 @@ export interface RasterComponentSpec {
 
 export const RASTER_CATEGORIES: RasterCategory[] = [
   { id: "all", label: "All Components", description: "Every zero-dependency procedural visual" },
+  {
+    id: "circuits",
+    label: "Circuits & Silicon",
+    description: "Routed PCB bus traces, interactive logic schematics, silicon wafers, and chip pinouts",
+  },
   {
     id: "dither",
     label: "Bayer & Halftone",
@@ -786,7 +792,7 @@ export function AtmosphericBackdrop() {
   {
     slug: "vector-circuit-trace",
     name: "Vector Circuit Trace",
-    category: "telemetry",
+    category: "circuits",
     tagline: "Architectural 45-degree routed PCB bus traces feeding luminous data pulses into a compute die.",
     description:
       "Draws precision solder pads, orthogonal silicon traces, and gradient-tailed signal packets converging continuously toward a central chip outline on pure Canvas2D.",
@@ -847,6 +853,188 @@ export function LiveMetricsBoard() {
     <SplitFlapCounter
       values={["00184", "00429", "01280", "03642"]}
       caption="LIVE VERIFIED ROLES INDEXED"
+      accentColor="#f27c63"
+    />
+  );
+}`,
+  },
+  {
+    slug: "silicon-wafer-grid",
+    name: "Silicon Wafer Grid",
+    category: "circuits",
+    tagline: "Circular semiconductor silicon wafer die map with sweeping laser inspection crosshair.",
+    description:
+      "Renders a circular clipped lattice of semiconductor dies with a notched orientation edge, active tested sectors, and an optical laser sweep on pure Canvas2D.",
+    technique: "Semiconductor Die Canvas2D",
+    fileName: "silicon-wafer-grid.tsx",
+    exportName: "SiliconWaferGrid",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { SiliconWaferGrid } from "@/components/raster/silicon-wafer-grid";
+
+export function HardwareHero() {
+  return (
+    <SiliconWaferGrid
+      accentColor="#f27c63"
+      className="h-72 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "pcb-logic-gates",
+    name: "PCB Logic Gates",
+    category: "circuits",
+    tagline: "Interactive digital logic PCB schematic with clickable A, B, and CLK switches.",
+    description:
+      "Pure SVG printed-circuit schematic routing 45-degree copper traces through live XOR, AND, and OUT logic stages with interactive click-to-toggle input pads.",
+    technique: "Interactive SVG Logic Schematic",
+    fileName: "pcb-logic-gates.tsx",
+    exportName: "PcbLogicGates",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { PcbLogicGates } from "@/components/raster/pcb-logic-gates";
+
+export function InteractiveCircuit() {
+  return (
+    <PcbLogicGates
+      accentColor="#f27c63"
+      className="h-64 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "motherboard-bus-matrix",
+    name: "Motherboard Bus Matrix",
+    category: "circuits",
+    tagline: "Parallel chamfered copper bus lanes with plated vias and pointer-reactive trace glow.",
+    description:
+      "Draws multi-lane differential motherboard traces with 45-degree jog bends, plated via rings, bi-directional signal packets, and live hover illumination.",
+    technique: "Multi-Lane PCB Bus Canvas2D",
+    fileName: "motherboard-bus-matrix.tsx",
+    exportName: "MotherboardBusMatrix",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { MotherboardBusMatrix } from "@/components/raster/motherboard-bus-matrix";
+
+export function BusBackdrop() {
+  return (
+    <MotherboardBusMatrix
+      lanes={9}
+      accentColor="#f27c63"
+      className="h-64 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "microchip-pinout-core",
+    name: "Microchip Pinout Core",
+    category: "circuits",
+    tagline: "QFN microprocessor die package with 24 perimeter leads radiating live signal pulses.",
+    description:
+      "Precision central silicon package with laser-etched die label, Pin-1 index marker, and 24 metallic perimeter traces pulsing outward to solder pads.",
+    technique: "QFN Pinout Canvas2D",
+    fileName: "microchip-pinout-core.tsx",
+    exportName: "MicrochipPinoutCore",
+    dependencies: [],
+    usageSnippet: `import { MicrochipPinoutCore } from "@/components/raster/microchip-pinout-core";
+
+export function ProcessorTile() {
+  return (
+    <MicrochipPinoutCore
+      chipLabel="R-01"
+      accentColor="#f27c63"
+      className="h-64 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "oscillator-clock-rail",
+    name: "Oscillator Clock Rail",
+    category: "circuits",
+    tagline: "4-channel digital logic analyzer timing diagram streaming CLK, BUS, SYN, and ACK.",
+    description:
+      "Renders crisp square-wave digital bus signals across a scrolling calibrated timebase with rising-edge trigger hairlines on pure Canvas2D.",
+    technique: "Digital Logic Timing Canvas2D",
+    fileName: "oscillator-clock-rail.tsx",
+    exportName: "OscillatorClockRail",
+    dependencies: [],
+    usageSnippet: `import { OscillatorClockRail } from "@/components/raster/oscillator-clock-rail";
+
+export function TimingPanel() {
+  return (
+    <OscillatorClockRail
+      accentColor="#f27c63"
+      className="h-64 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "isometric-circuit-chip",
+    name: "Isometric Circuit Chip",
+    category: "isometric",
+    tagline: "1-bit Bayer-dithered isometric processor package seated over animated PCB leads.",
+    description:
+      "Bridges 1-bit pixel dithering and silicon hardware design with a hovering isometric chip die, PCB substrate base, and animated copper lead pulses.",
+    technique: "1-Bit Isometric Chip Canvas2D",
+    fileName: "isometric-circuit-chip.tsx",
+    exportName: "IsometricCircuitChip",
+    dependencies: [],
+    usageSnippet: `import { IsometricCircuitChip } from "@/components/raster/isometric-circuit-chip";
+
+export function HardwareBento() {
+  return (
+    <IsometricCircuitChip
+      color="#e7e2da"
+      accentColor="#f27c63"
+      className="h-52 w-full rounded-xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "stepper-progress-rail",
+    name: "Stepper Progress Rail",
+    category: "loaders",
+    tagline: "Horizontal hardware pipeline rail with glowing progress beam across milestone nodes.",
+    description:
+      "Cycles smoothly through discrete build/deploy stages with crisp numbered nodes, completed checkmarks, and an illuminated hairline fill bar.",
+    technique: "Pure React + CSS Pipeline Rail",
+    fileName: "stepper-progress-rail.tsx",
+    exportName: "StepperProgressRail",
+    dependencies: [],
+    usageSnippet: `import { StepperProgressRail } from "@/components/raster/stepper-progress-rail";
+
+export function DeployStatus() {
+  return (
+    <StepperProgressRail
+      steps={["Build", "Verify", "Sign", "Deploy"]}
+      accentColor="#f27c63"
+    />
+  );
+}`,
+  },
+  {
+    slug: "magnetic-shutter-button",
+    name: "Magnetic Shutter Button",
+    category: "ui-motion",
+    tagline: "Cursor-attracted obsidian CTA pill with vertical double-text shutter roll on hover.",
+    description:
+      "Tracks pointer proximity for subtle magnetic spring pull while rolling button typography smoothly upward into an accent highlight layer.",
+    technique: "Magnetic Pointer Math + CSS Shutter",
+    fileName: "magnetic-shutter-button.tsx",
+    exportName: "MagneticShutterButton",
+    dependencies: [],
+    usageSnippet: `import { MagneticShutterButton } from "@/components/raster/magnetic-shutter-button";
+
+export function PrimaryAction() {
+  return (
+    <MagneticShutterButton
+      label="Deploy Circuit"
       accentColor="#f27c63"
     />
   );

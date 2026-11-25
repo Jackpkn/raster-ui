@@ -34,7 +34,11 @@ export function PlaygroundClient({
           ? "Open Command Palette"
           : spec.slug === "split-flap-counter"
             ? "LIVE VERIFIED ROLES INDEXED"
-            : "Ship your craft. We run it."
+            : spec.slug === "microchip-pinout-core"
+              ? "R-01"
+              : spec.slug === "magnetic-shutter-button"
+                ? "Deploy Circuit"
+                : "Ship your craft. We run it."
   );
   const [meshVariant, setMeshVariant] = useState<"obsidian" | "alabaster">("obsidian");
   const [codeTab, setCodeTab] = useState<"usage" | "source" | "cli">("usage");
@@ -52,7 +56,11 @@ export function PlaygroundClient({
     }
   }
 
-  const isTypography = spec.category === "typography" || spec.slug === "shimmer-command-pill";
+  const isTypography =
+    spec.category === "typography" ||
+    spec.slug === "shimmer-command-pill" ||
+    spec.slug === "microchip-pinout-core" ||
+    spec.slug === "magnetic-shutter-button";
   const isMesh = spec.slug === "editorial-mesh-gradient";
 
   return (
@@ -227,6 +235,7 @@ export function PlaygroundClient({
             spec.slug === "pixel-matrix-stream" ||
             spec.slug === "pixel-sunburst-dither" ||
             spec.slug === "pixel-dissolve-loader" ||
+            spec.slug === "motherboard-bus-matrix" ||
             spec.slug === "magnetic-field-lines" ||
             spec.slug === "voronoi-pulse-grid") && (
             <div className="space-y-2">

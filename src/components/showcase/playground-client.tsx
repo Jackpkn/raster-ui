@@ -21,7 +21,9 @@ export function PlaygroundClient({
   sizeKb: string;
   allSpecs: RasterComponentSpec[];
 }) {
-  const [palette, setPalette] = useState<PalettePresetId>("terracotta");
+  const [palette, setPalette] = useState<PalettePresetId>(
+    spec.category === "shaders" ? "prism" : "terracotta"
+  );
   const [speed, setSpeed] = useState(1);
   const [pixelSize, setPixelSize] = useState(3);
   const [paused, setPaused] = useState(false);
@@ -245,7 +247,8 @@ export function PlaygroundClient({
             />
           </div>
 
-          {(spec.slug === "bayer-dither-wave" ||
+          {(spec.category === "shaders" ||
+            spec.slug === "bayer-dither-wave" ||
             spec.slug === "bayer-dither-aurora" ||
             spec.slug === "halftone-spotlight" ||
             spec.slug === "crt-scanline-text" ||
@@ -262,9 +265,11 @@ export function PlaygroundClient({
             <div className="space-y-2">
               <div className="flex justify-between text-xs">
                 <label htmlFor="pixel-slider" className="font-medium text-ink">
-                  Raster Pixel Scale
+                  {spec.category === "shaders" ? "Film Grain Density" : "Raster Pixel Scale"}
                 </label>
-                <span className="font-mono text-ink-muted">{pixelSize}px</span>
+                <span className="font-mono text-ink-muted">
+                  {spec.category === "shaders" ? `${pixelSize * 18}%` : `${pixelSize}px`}
+                </span>
               </div>
               <input
                 id="pixel-slider"

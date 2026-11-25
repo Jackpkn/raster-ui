@@ -24,6 +24,7 @@ export function GalleryClient({ items }: { items: GalleryCardItem[] }) {
   const [category, setCategory] = useState<RasterCategoryId>("all");
   const [query, setQuery] = useState("");
   const [palette, setPalette] = useState<PalettePresetId>("terracotta");
+  const [paletteTouched, setPaletteTouched] = useState(false);
   const [copiedSlug, setCopiedSlug] = useState<string | null>(null);
 
   const filtered = useMemo(() => {
@@ -59,7 +60,12 @@ export function GalleryClient({ items }: { items: GalleryCardItem[] }) {
               <button
                 key={cat.id}
                 type="button"
-                onClick={() => setCategory(cat.id)}
+                onClick={() => {
+                  setCategory(cat.id);
+                  if (cat.id === "shaders" && !paletteTouched) {
+                    setPalette("prism");
+                  }
+                }}
                 className={`h-8 rounded-full border px-3.5 text-xs font-medium transition-colors cursor-pointer ${
                   active
                     ? "border-ink bg-ink text-canvas"
@@ -95,7 +101,10 @@ export function GalleryClient({ items }: { items: GalleryCardItem[] }) {
                 <button
                   key={pid}
                   type="button"
-                  onClick={() => setPalette(pid)}
+                  onClick={() => {
+                    setPalette(pid);
+                    setPaletteTouched(true);
+                  }}
                   className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 font-medium cursor-pointer transition-colors ${
                     active ? "bg-subtle text-ink" : "text-ink-muted hover:text-ink"
                   }`}

@@ -12,6 +12,7 @@ import { BiometricIrisScanner } from "@/registry/components/biometric-iris-scann
 import { BorderBeamCard } from "@/registry/components/border-beam-card";
 import { BrowserFrameMockup } from "@/registry/components/browser-frame-mockup";
 import { CardDeckFan } from "@/registry/components/card-deck-fan";
+import { ChromaticGodRays } from "@/registry/components/chromatic-god-rays";
 import { ChromaticNoiseVeil } from "@/registry/components/chromatic-noise-veil";
 import { CodeDiffViewer } from "@/registry/components/code-diff-viewer";
 import { CommandPalettePreview } from "@/registry/components/command-palette-preview";
@@ -28,6 +29,8 @@ import { EventWaterfallStream } from "@/registry/components/event-waterfall-stre
 import { FiberOpticStream } from "@/registry/components/fiber-optic-stream";
 import { FibonacciDotGlobe } from "@/registry/components/fibonacci-dot-globe";
 import { FloatingIslandNavbar } from "@/registry/components/floating-island-navbar";
+import { GrainGradientOrbs } from "@/registry/components/grain-gradient-orbs";
+import { GrainMeshWarp } from "@/registry/components/grain-mesh-warp";
 import { GravityRippleGrid } from "@/registry/components/gravity-ripple-grid";
 import { HalftoneSpotlight } from "@/registry/components/halftone-spotlight";
 import { HashChainLedger } from "@/registry/components/hash-chain-ledger";
@@ -38,6 +41,7 @@ import { IsometricCircuitChip } from "@/registry/components/isometric-circuit-ch
 import { IsometricFloatingCube } from "@/registry/components/isometric-floating-cube";
 import { IsometricServerRack } from "@/registry/components/isometric-server-rack";
 import { IsometricSignalTower } from "@/registry/components/isometric-signal-tower";
+import { LiquidChromeRipple } from "@/registry/components/liquid-chrome-ripple";
 import { LiquidMetaballBlob } from "@/registry/components/liquid-metaball-blob";
 import { LiveActivityStack } from "@/registry/components/live-activity-stack";
 import { MagneticFieldLines } from "@/registry/components/magnetic-field-lines";
@@ -49,6 +53,7 @@ import { MetricGaugeArc } from "@/registry/components/metric-gauge-arc";
 import { MicrochipPinoutCore } from "@/registry/components/microchip-pinout-core";
 import { MotherboardBusMatrix } from "@/registry/components/motherboard-bus-matrix";
 import { NeuralLayerGraph } from "@/registry/components/neural-layer-graph";
+import { NeuroPlasmaField } from "@/registry/components/neuro-plasma-field";
 import { ObsidianStarfield } from "@/registry/components/obsidian-starfield";
 import { OrbitalRingLoader } from "@/registry/components/orbital-ring-loader";
 import { OscillatorClockRail } from "@/registry/components/oscillator-clock-rail";
@@ -59,6 +64,7 @@ import { PixelDissolveLoader } from "@/registry/components/pixel-dissolve-loader
 import { PixelMatrixStream } from "@/registry/components/pixel-matrix-stream";
 import { PixelSunburstDither } from "@/registry/components/pixel-sunburst-dither";
 import { PricingToggleCard } from "@/registry/components/pricing-toggle-card";
+import { PrismCausticVeil } from "@/registry/components/prism-caustic-veil";
 import { RadarSweepGrid } from "@/registry/components/radar-sweep-grid";
 import { RadialContextMenu } from "@/registry/components/radial-context-menu";
 import { RetroPerspectiveGrid } from "@/registry/components/retro-perspective-grid";
@@ -66,10 +72,12 @@ import { SegmentedToggleRail } from "@/registry/components/segmented-toggle-rail
 import { ShimmerCommandPill } from "@/registry/components/shimmer-command-pill";
 import { SignatureDrawPath } from "@/registry/components/signature-draw-path";
 import { SiliconWaferGrid } from "@/registry/components/silicon-wafer-grid";
+import { SmokeRingShader } from "@/registry/components/smoke-ring-shader";
 import { SplitFlapCounter } from "@/registry/components/split-flap-counter";
 import { SpotlightBentoCard } from "@/registry/components/spotlight-bento-card";
 import { SpotlightTestimonialCard } from "@/registry/components/spotlight-testimonial-card";
 import { StepperProgressRail } from "@/registry/components/stepper-progress-rail";
+import { StippledVortexSwirl } from "@/registry/components/stippled-vortex-swirl";
 import { TerminalCommandStepper } from "@/registry/components/terminal-command-stepper";
 import { TerminalScrambleText } from "@/registry/components/terminal-scramble-text";
 import { ThermalHeatmapCalendar } from "@/registry/components/thermal-heatmap-calendar";
@@ -83,7 +91,7 @@ import { WireframeTorusKnot } from "@/registry/components/wireframe-torus-knot";
 import { WordFlipHeadline } from "@/registry/components/word-flip-headline";
 import { ZeroTrustFirewall } from "@/registry/components/zero-trust-firewall";
 
-export type PalettePresetId = "terracotta" | "cobalt" | "mono" | "emerald";
+export type PalettePresetId = "terracotta" | "prism" | "cobalt" | "mono" | "emerald";
 
 export const PALETTE_PRESETS: Record<
   PalettePresetId,
@@ -93,6 +101,8 @@ export const PALETTE_PRESETS: Record<
     accentRgb: [number, number, number];
     accentHex: string;
     monoHex: string;
+    shaderStops5: [string, string, string, string, string];
+    shaderStops4: [string, string, string, string];
   }
 > = {
   terracotta: {
@@ -101,6 +111,17 @@ export const PALETTE_PRESETS: Record<
     accentRgb: [242, 124, 99],
     accentHex: "#f27c63",
     monoHex: "#e7e2da",
+    shaderStops5: ["#040307", "#7c2d12", "#f27c63", "#fde68a", "#db2777"],
+    shaderStops4: ["#040307", "#6b213a", "#f27c63", "#fed7aa"],
+  },
+  prism: {
+    label: "Paper Prism",
+    baseRgb: [224, 212, 255],
+    accentRgb: [192, 132, 252],
+    accentHex: "#c084fc",
+    monoHex: "#e9d5ff",
+    shaderStops5: ["#030307", "#6d28d9", "#f0abfc", "#00c2ff", "#1d4ed8"],
+    shaderStops4: ["#030307", "#5b21b6", "#f0abfc", "#00c2ff"],
   },
   cobalt: {
     label: "Maritime Cobalt",
@@ -108,6 +129,8 @@ export const PALETTE_PRESETS: Record<
     accentRgb: [152, 186, 255],
     accentHex: "#4f7cff",
     monoHex: "#d6e2ff",
+    shaderStops5: ["#030308", "#1e3a8a", "#38bdf8", "#a5f3fc", "#2563eb"],
+    shaderStops4: ["#030308", "#1e3a8a", "#4f7cff", "#67e8f9"],
   },
   mono: {
     label: "Pure Monochrome",
@@ -115,6 +138,8 @@ export const PALETTE_PRESETS: Record<
     accentRgb: [255, 255, 255],
     accentHex: "#f4f4f5",
     monoHex: "#e4e4e7",
+    shaderStops5: ["#030305", "#27272a", "#a1a1aa", "#f8fafc", "#52525b"],
+    shaderStops4: ["#030305", "#3f3f46", "#d4d4d8", "#ffffff"],
   },
   emerald: {
     label: "Phosphor Emerald",
@@ -122,6 +147,8 @@ export const PALETTE_PRESETS: Record<
     accentRgb: [52, 211, 153],
     accentHex: "#34d399",
     monoHex: "#d1fae5",
+    shaderStops5: ["#030706", "#065f46", "#34d399", "#67e8f9", "#0f766e"],
+    shaderStops4: ["#030706", "#065f46", "#34d399", "#a7f3d0"],
   },
 };
 
@@ -1223,6 +1250,94 @@ export function ComponentStage({
             className={compact ? "scale-[0.9]" : "scale-125"}
           />
         </div>
+      );
+
+    case "grain-gradient-orbs":
+      return (
+        <GrainGradientOrbs
+          colors={pal.shaderStops5}
+          grain={0.07 + pixelSize * 0.045}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "grain-mesh-warp":
+      return (
+        <GrainMeshWarp
+          colors={pal.shaderStops4}
+          grain={0.06 + pixelSize * 0.045}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "smoke-ring-shader":
+      return (
+        <SmokeRingShader
+          colors={pal.shaderStops4}
+          grain={0.07 + pixelSize * 0.045}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "neuro-plasma-field":
+      return (
+        <NeuroPlasmaField
+          colors={pal.shaderStops4}
+          grain={0.05 + pixelSize * 0.038}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "chromatic-god-rays":
+      return (
+        <ChromaticGodRays
+          colors={pal.shaderStops4}
+          grain={0.06 + pixelSize * 0.045}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "liquid-chrome-ripple":
+      return (
+        <LiquidChromeRipple
+          colors={pal.shaderStops5}
+          grain={0.04 + pixelSize * 0.032}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "stippled-vortex-swirl":
+      return (
+        <StippledVortexSwirl
+          colors={pal.shaderStops4}
+          grain={0.08 + pixelSize * 0.045}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "prism-caustic-veil":
+      return (
+        <PrismCausticVeil
+          colors={pal.shaderStops4}
+          grain={0.05 + pixelSize * 0.038}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
       );
 
     default:

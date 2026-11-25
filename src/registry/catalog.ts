@@ -1,5 +1,6 @@
 export type RasterCategoryId =
   | "all"
+  | "shaders"
   | "editorial"
   | "website-blocks"
   | "security"
@@ -38,6 +39,11 @@ export interface RasterComponentSpec {
 
 export const RASTER_CATEGORIES: RasterCategory[] = [
   { id: "all", label: "All Components", description: "Every zero-dependency procedural visual" },
+  {
+    id: "shaders",
+    label: "Shaders & Grain",
+    description: "Paper-style stochastic grain gradients, warped color meshes, smoke rings, god rays, and caustics",
+  },
   {
     id: "editorial",
     label: "Editorial & Craft",
@@ -1927,6 +1933,187 @@ export function VelocityHeatmap() {
     <ThermalHeatmapCalendar
       weeks={16}
       accentColor="#f27c63"
+    />
+  );
+}`,
+  },
+  {
+    slug: "grain-gradient-orbs",
+    name: "Grain Gradient Orbs",
+    category: "shaders",
+    tagline: "Opposite-corner iridescent chromatic orbs scattered through tactile analog film grain.",
+    description:
+      "Perturbs smooth breathing corner radial fields with screen-locked stochastic grain before multi-stop color lookup for authentic Paper-style stippled gradients with zero WebGL limits.",
+    technique: "Stochastic LUT Grain Shader Canvas2D",
+    fileName: "grain-gradient-orbs.tsx",
+    exportName: "GrainGradientOrbs",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { GrainGradientOrbs } from "@/components/raster/grain-gradient-orbs";
+
+export function ShaderHero() {
+  return (
+    <GrainGradientOrbs
+      colors={["#030307", "#6d28d9", "#f0abfc", "#00c2ff", "#1d4ed8"]}
+      grain={0.2}
+      className="h-80 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "grain-mesh-warp",
+    name: "Grain Mesh Warp",
+    category: "shaders",
+    tagline: "Two-stage domain-warped liquid color folds dissolved in fine stochastic film grain.",
+    description:
+      "Evaluates an animated trigonometric domain warp across a smooth 256-step chromatic LUT with crisp screen-space analog stippling and zero external dependencies.",
+    technique: "Domain-Warp LUT Shader Canvas2D",
+    fileName: "grain-mesh-warp.tsx",
+    exportName: "GrainMeshWarp",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { GrainMeshWarp } from "@/components/raster/grain-mesh-warp";
+
+export function FluidBanner() {
+  return (
+    <GrainMeshWarp
+      grain={0.19}
+      className="h-72 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "smoke-ring-shader",
+    name: "Smoke Ring Shader",
+    category: "shaders",
+    tagline: "Luminous turbulent eclipse halo with curling atmospheric wisps and stippled grain falloff.",
+    description:
+      "Deforms a glowing orbital smoke ring with multi-harmonic angular waves and scatters its perimeter cleanly into deep obsidian using zero WebGL contexts.",
+    technique: "Turbulent Ring LUT Shader Canvas2D",
+    fileName: "smoke-ring-shader.tsx",
+    exportName: "SmokeRingShader",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { SmokeRingShader } from "@/components/raster/smoke-ring-shader";
+
+export function EclipseStage() {
+  return (
+    <SmokeRingShader
+      grain={0.2}
+      className="h-72 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "neuro-plasma-field",
+    name: "Neuro Plasma Field",
+    category: "shaders",
+    tagline: "Bioluminescent ridged interference filaments glowing like neural silk across obsidian.",
+    description:
+      "Synthesizes sharp multifractal ridge creases that drift organically through a rich chromatic ramp with crisp tactile film grain.",
+    technique: "Ridged Filament LUT Shader Canvas2D",
+    fileName: "neuro-plasma-field.tsx",
+    exportName: "NeuroPlasmaField",
+    dependencies: [],
+    usageSnippet: `import { NeuroPlasmaField } from "@/components/raster/neuro-plasma-field";
+
+export function AiAtmosphere() {
+  return (
+    <NeuroPlasmaField
+      grain={0.16}
+      className="h-72 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "chromatic-god-rays",
+    name: "Chromatic God Rays",
+    category: "shaders",
+    tagline: "Volumetric diagonal prism shafts sweeping through stippled dark atmospheric dust.",
+    description:
+      "Projects angular interference light beams down from an upper corner emitter with exponential depth falloff and screen-space analog film grain.",
+    technique: "Volumetric Ray LUT Shader Canvas2D",
+    fileName: "chromatic-god-rays.tsx",
+    exportName: "ChromaticGodRays",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { ChromaticGodRays } from "@/components/raster/chromatic-god-rays";
+
+export function LightBackdrop() {
+  return (
+    <ChromaticGodRays
+      grain={0.19}
+      className="h-72 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "liquid-chrome-ripple",
+    name: "Liquid Chrome Ripple",
+    category: "shaders",
+    tagline: "Iridescent liquid mercury height waves with razor-sharp pearlescent specular bands.",
+    description:
+      "Interferes dual fluid wave emitters and maps specular reflection bands across an obsidian-to-pearl iridescent ramp with subtle analog grain.",
+    technique: "Specular Fluid LUT Shader Canvas2D",
+    fileName: "liquid-chrome-ripple.tsx",
+    exportName: "LiquidChromeRipple",
+    dependencies: [],
+    usageSnippet: `import { LiquidChromeRipple } from "@/components/raster/liquid-chrome-ripple";
+
+export function ChromeCard() {
+  return (
+    <LiquidChromeRipple
+      grain={0.13}
+      className="h-72 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "stippled-vortex-swirl",
+    name: "Stippled Vortex Swirl",
+    category: "shaders",
+    tagline: "Twisting multi-arm chromatic spiral vortex dispersing into fine grain-dithered sparks.",
+    description:
+      "Combines polar logarithmic spiral ribbons, a deep black singularity center, and stochastic film grain dispersion on pure Canvas2D.",
+    technique: "Polar Vortex LUT Shader Canvas2D",
+    fileName: "stippled-vortex-swirl.tsx",
+    exportName: "StippledVortexSwirl",
+    dependencies: [],
+    usageSnippet: `import { StippledVortexSwirl } from "@/components/raster/stippled-vortex-swirl";
+
+export function VortexHero() {
+  return (
+    <StippledVortexSwirl
+      grain={0.22}
+      className="h-72 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "prism-caustic-veil",
+    name: "Prism Caustic Veil",
+    category: "shaders",
+    tagline: "Refractive optical glass caustic webs with subtle RGB chromatic fringe dispersion.",
+    description:
+      "Evaluates phase-offset RGB caustic interference channels to synthesize prismatic water-and-glass light refractions layered with fine analog grain.",
+    technique: "RGB Dispersion Caustic Canvas2D",
+    fileName: "prism-caustic-veil.tsx",
+    exportName: "PrismCausticVeil",
+    dependencies: [],
+    usageSnippet: `import { PrismCausticVeil } from "@/components/raster/prism-caustic-veil";
+
+export function GlassBackdrop() {
+  return (
+    <PrismCausticVeil
+      grain={0.16}
+      className="h-72 w-full rounded-2xl"
     />
   );
 }`,

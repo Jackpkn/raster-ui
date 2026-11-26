@@ -103,22 +103,22 @@ Replace `http://localhost:3001` with your deployed domain once hosted so any pro
 
 | Visual Family | Count | Focus |
 | :--- | :---: | :--- |
-| [Shaders & Grain](#shaders-grain-13) | **13** | Paper-style stochastic grain gradients, warped color meshes, smoke rings, god rays, and caustics |
-| [Editorial & Craft](#editorial-craft-4) | **4** | Calligraphic SVG signatures, fanned 3D card decks, liquid metaballs, and changelog timelines |
+| [Shaders & Grain](#shaders--grain-13) | **13** | Paper-style stochastic grain gradients, warped color meshes, smoke rings, god rays, and caustics |
+| [Editorial & Craft](#editorial--craft-4) | **4** | Calligraphic SVG signatures, fanned 3D card decks, liquid metaballs, and changelog timelines |
 | [Website Essentials](#website-essentials-12) | **12** | Interactive Cmd+K palettes, before/after sliders, code diffs, pricing cards, navbars, and accordions |
-| [Security & Crypto](#security-crypto-4) | **4** | Cipher lock vaults, zero-trust packet firewalls, immutable hash chains, and iris scanners |
-| [AI & Agents](#ai-agents-5) | **5** | Streaming token composers, neural layer graphs, tool-calling orbits, vector clouds, and attention maps |
-| [Data Flow & Streams](#data-flow-streams-6) | **6** | Animated multi-node beams, fiber ribbons, packet queues, prisms, and trace waterfalls |
-| [Circuits & Silicon](#circuits-silicon-7) | **7** | Routed PCB bus traces, interactive logic schematics, silicon wafers, and chip pinouts |
-| [Bayer & Halftone](#bayer-halftone-6) | **6** | 1-bit ordered dithering, interactive halftones, and starfields |
+| [Security & Crypto](#security--crypto-4) | **4** | Cipher lock vaults, zero-trust packet firewalls, immutable hash chains, and iris scanners |
+| [AI & Agents](#ai--agents-5) | **5** | Streaming token composers, neural layer graphs, tool-calling orbits, vector clouds, and attention maps |
+| [Data Flow & Streams](#data-flow--streams-6) | **6** | Animated multi-node beams, fiber ribbons, packet queues, prisms, and trace waterfalls |
+| [Circuits & Silicon](#circuits--silicon-7) | **7** | Routed PCB bus traces, interactive logic schematics, silicon wafers, and chip pinouts |
+| [Bayer & Halftone](#bayer--halftone-6) | **6** | 1-bit ordered dithering, interactive halftones, and starfields |
 | [1-Bit Isometric](#1-bit-isometric-6) | **6** | Hardware-style pixelated isometric micro-scenes for feature cards |
-| [Telemetry & Audio](#telemetry-audio-7) | **7** | ASCII density shaders, phosphor oscilloscopes, radar sweeps, and pixel streams |
-| [Physics & Particles](#physics-particles-4) | **4** | Magnetic compass fields, constellation meshes, and interference pulse grids |
+| [Telemetry & Audio](#telemetry--audio-7) | **7** | ASCII density shaders, phosphor oscilloscopes, radar sweeps, and pixel streams |
+| [Physics & Particles](#physics--particles-4) | **4** | Magnetic compass fields, constellation meshes, and interference pulse grids |
 | [Interactive Surfaces](#interactive-surfaces-4) | **4** | Orbital border beams, cursor spotlight masks, and editorial mesh gradients |
 | [UI Micro-Motion](#ui-micro-motion-9) | **9** | Magnetic docks, animated CLI steppers, marquees, and metallic command pills |
-| [Loaders & Progress](#loaders-progress-3) | **3** | 1-bit pixel dissolve matrices and SVG counter-harmonic orbital telemetry rings |
-| [CRT & Kinetic Type](#crt-kinetic-type-6) | **6** | Scanline display headlines, cipher scramble text, and magnetic wordmarks |
-| [3D & Topography](#3d-topography-4) | **4** | Draggable 3D Fibonacci spheres, parametric torus wireframes, and contour maps |
+| [Loaders & Progress](#loaders--progress-3) | **3** | 1-bit pixel dissolve matrices and SVG counter-harmonic orbital telemetry rings |
+| [CRT & Kinetic Type](#crt--kinetic-type-6) | **6** | Scanline display headlines, cipher scramble text, and magnetic wordmarks |
+| [3D & Topography](#3d--topography-4) | **4** | Draggable 3D Fibonacci spheres, parametric torus wireframes, and contour maps |
 
 ---
 

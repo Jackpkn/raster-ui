@@ -8,10 +8,10 @@ import {
 } from "../src/registry/source-loader";
 
 describe("Raster UI Component Registry", () => {
-  it("exposes 90 unique components spanning all 16 visual families", () => {
-    expect(RASTER_COMPONENTS).toHaveLength(90);
+  it("exposes 100 unique components spanning all 16 visual families", () => {
+    expect(RASTER_COMPONENTS).toHaveLength(100);
     const slugs = new Set(RASTER_COMPONENTS.map((c) => c.slug));
-    expect(slugs.size).toBe(90);
+    expect(slugs.size).toBe(100);
 
     const visualFamilies = RASTER_CATEGORIES.filter((c) => c.id !== "all");
     expect(visualFamilies).toHaveLength(16);
@@ -56,7 +56,7 @@ describe("Raster UI Component Registry", () => {
   it("builds a complete registry index JSON payload", () => {
     const index = buildRegistryIndex("https://raster.example");
     expect(index.name).toBe("raster-ui");
-    expect(index.items).toHaveLength(90);
+    expect(index.items).toHaveLength(100);
     expect(index.items[0]?.registryUrl).toBe("https://raster.example/r/bayer-dither-wave.json");
   });
 });

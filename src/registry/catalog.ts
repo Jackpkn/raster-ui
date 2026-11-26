@@ -2118,6 +2118,217 @@ export function GlassBackdrop() {
   );
 }`,
   },
+  {
+    slug: "grain-eclipse-crescent",
+    name: "Grain Eclipse Crescent",
+    category: "shaders",
+    tagline: "Obsidian planetary silhouette eclipsing a radiant multi-stop corona with fine analog grain.",
+    description:
+      "Simulates an orbiting solar corona occluded by a dark foreground sphere so luminous chromatic light spills along the curved eclipse edge through screen-locked film grain.",
+    technique: "Eclipse Corona LUT Shader Canvas2D",
+    fileName: "grain-eclipse-crescent.tsx",
+    exportName: "GrainEclipseCrescent",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { GrainEclipseCrescent } from "@/components/raster/grain-eclipse-crescent";
+
+export function EclipseBanner() {
+  return (
+    <GrainEclipseCrescent
+      grain={0.2}
+      className="h-80 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "grain-aurora-horizon",
+    name: "Grain Aurora Horizon",
+    category: "shaders",
+    tagline: "Curved keynote horizon bloom rising softly from the bottom rim through stippled grain.",
+    description:
+      "Casts a luminous atmospheric planetary horizon curving gently across the lower edge and dissolving upward into pitch black through crisp stochastic film grain.",
+    technique: "Horizon Bloom LUT Shader Canvas2D",
+    fileName: "grain-aurora-horizon.tsx",
+    exportName: "GrainAuroraHorizon",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { GrainAuroraHorizon } from "@/components/raster/grain-aurora-horizon";
+
+export function KeynoteHero() {
+  return (
+    <GrainAuroraHorizon
+      grain={0.2}
+      className="h-80 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "voronoi-stained-glass",
+    name: "Voronoi Stained Glass",
+    category: "shaders",
+    tagline: "Animated crystalline F2-F1 Voronoi cell ridges shimmering through tactile film grain.",
+    description:
+      "Computes live 2D cellular Voronoi crystal facets and glowing inter-cell ridges across drifting seeds on pure Canvas2D with zero WebGL contexts.",
+    technique: "Voronoi Crystal LUT Shader Canvas2D",
+    fileName: "voronoi-stained-glass.tsx",
+    exportName: "VoronoiStainedGlass",
+    dependencies: [],
+    usageSnippet: `import { VoronoiStainedGlass } from "@/components/raster/voronoi-stained-glass";
+
+export function CrystalSurface() {
+  return (
+    <VoronoiStainedGlass
+      grain={0.16}
+      className="h-72 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "moire-interference-rings",
+    name: "Moire Interference Rings",
+    category: "shaders",
+    tagline: "Dual orbiting concentric wave emitters producing hypnotic grainy optical moire bands.",
+    description:
+      "Interferes two drifting circular phase fields across obsidian to create crisp living moire patterns mapped through a chromatic LUT and screen-space grain.",
+    technique: "Optical Moire LUT Shader Canvas2D",
+    fileName: "moire-interference-rings.tsx",
+    exportName: "MoireInterferenceRings",
+    dependencies: [],
+    usageSnippet: `import { MoireInterferenceRings } from "@/components/raster/moire-interference-rings";
+
+export function OpticalBackdrop() {
+  return (
+    <MoireInterferenceRings
+      grain={0.15}
+      className="h-72 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "halftone-dither-sphere",
+    name: "Halftone Dither Sphere",
+    category: "shaders",
+    tagline: "3D Phong-lit stippled planet orb with orbiting key light and atmospheric Fresnel rim.",
+    description:
+      "Evaluates analytic 3D sphere normals, directional diffuse shading, and Fresnel rim glow scattered cleanly through stochastic analog grain on pure Canvas2D.",
+    technique: "3D Phong Grain Sphere Canvas2D",
+    fileName: "halftone-dither-sphere.tsx",
+    exportName: "HalftoneDitherSphere",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { HalftoneDitherSphere } from "@/components/raster/halftone-dither-sphere";
+
+export function PlanetStage() {
+  return (
+    <HalftoneDitherSphere
+      grain={0.21}
+      className="h-72 w-full rounded-2xl"
+    />
+  );
+}`,
+  },
+  {
+    slug: "spotlight-hero-badge",
+    name: "Spotlight Hero Badge",
+    category: "website-blocks",
+    tagline: "SaaS announcement pill wrapped in a smoothly orbiting conic-gradient border beam.",
+    description:
+      "Pure CSS rotating conic light rim clipped to a 1.25px hairline around an obsidian announcement chip with version tag and hover arrow nudge.",
+    technique: "Pure CSS Conic Rim Announcement Pill",
+    fileName: "spotlight-hero-badge.tsx",
+    exportName: "SpotlightHeroBadge",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { SpotlightHeroBadge } from "@/components/raster/spotlight-hero-badge";
+
+export function LaunchPill() {
+  return (
+    <SpotlightHeroBadge
+      tag="v3.0"
+      label="100 zero-dependency components live"
+      accentColor="#f27c63"
+    />
+  );
+}`,
+  },
+  {
+    slug: "kbd-shortcut-dock",
+    name: "Kbd Shortcut Dock",
+    category: "website-blocks",
+    tagline: "Tactile 3D sculpted obsidian mechanical keycaps with press travel and action readout.",
+    description:
+      "Interactive keycap cluster with realistic 3D wall shadows, spring depress travel, and accent illumination for showcasing keyboard-driven web apps.",
+    technique: "Interactive 3D CSS Keycap Cluster",
+    fileName: "kbd-shortcut-dock.tsx",
+    exportName: "KbdShortcutDock",
+    dependencies: [],
+    usageSnippet: `import { KbdShortcutDock } from "@/components/raster/kbd-shortcut-dock";
+
+export function ShortcutShowcase() {
+  return <KbdShortcutDock accentColor="#f27c63" />;
+}`,
+  },
+  {
+    slug: "animated-metric-strip",
+    name: "Animated Metric Strip",
+    category: "website-blocks",
+    tagline: "3-column startup KPI bar animating tabular count-up metrics inside hairline dividers.",
+    description:
+      "Smooth cubic ease-out number counter displaying headline product metrics with specular obsidian chrome and instant reduced-motion fallback.",
+    technique: "RAF Tabular KPI Count-Up Strip",
+    fileName: "animated-metric-strip.tsx",
+    exportName: "AnimatedMetricStrip",
+    dependencies: [],
+    usageSnippet: `import { AnimatedMetricStrip } from "@/components/raster/animated-metric-strip";
+
+export function ProofStrip() {
+  return <AnimatedMetricStrip accentColor="#f27c63" />;
+}`,
+  },
+  {
+    slug: "glass-toast-stack",
+    name: "Glass Toast Stack",
+    category: "ui-motion",
+    tagline: "Interactive Sonner-style stacked obsidian notification cards with depth scaling.",
+    description:
+      "Click the trigger pill to push fresh glass telemetry notifications onto the front of a depth-faded 3-card stack with zero animation libraries.",
+    technique: "Interactive Stacked Toast Deck",
+    fileName: "glass-toast-stack.tsx",
+    exportName: "GlassToastStack",
+    dependencies: [],
+    featured: true,
+    usageSnippet: `import { GlassToastStack } from "@/components/raster/glass-toast-stack";
+
+export function ToastDemo() {
+  return <GlassToastStack accentColor="#f27c63" />;
+}`,
+  },
+  {
+    slug: "typewriter-gradient-line",
+    name: "Typewriter Gradient Line",
+    category: "typography",
+    tagline: "Metallic gradient hero typewriter cycling product statements with a glowing caret.",
+    description:
+      "Smoothly types and erases concise hero claims with a crisp ivory-to-accent gradient clip and glowing vertical cursor bar.",
+    technique: "Gradient Clip Kinetic Typewriter",
+    fileName: "typewriter-gradient-line.tsx",
+    exportName: "TypewriterGradientLine",
+    dependencies: [],
+    usageSnippet: `import { TypewriterGradientLine } from "@/components/raster/typewriter-gradient-line";
+
+export function HeroHeadline() {
+  return (
+    <TypewriterGradientLine
+      accentColor="#f27c63"
+      className="text-3xl sm:text-5xl"
+    />
+  );
+}`,
+  },
 ];
 
 export function getComponentSpecBySlug(slug: string): RasterComponentSpec | undefined {

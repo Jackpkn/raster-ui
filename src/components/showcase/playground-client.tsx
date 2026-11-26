@@ -52,7 +52,9 @@ export function PlaygroundClient({
                           ? "Build websites that feel"
                           : spec.slug === "signature-draw-path"
                             ? "RASTER FOUNDRY · EDITION 01"
-                            : "Ship your craft. We run it."
+                            : spec.slug === "spotlight-hero-badge"
+                              ? "100 zero-dependency components live"
+                              : "Ship your craft. We run it."
   );
   const [meshVariant, setMeshVariant] = useState<"obsidian" | "alabaster">("obsidian");
   const [codeTab, setCodeTab] = useState<"usage" | "source" | "cli">("usage");
@@ -79,7 +81,8 @@ export function PlaygroundClient({
     spec.slug === "agent-reasoning-orbit" ||
     spec.slug === "token-stream-composer" ||
     spec.slug === "metric-gauge-arc" ||
-    spec.slug === "signature-draw-path";
+    spec.slug === "signature-draw-path" ||
+    spec.slug === "spotlight-hero-badge";
   const isMesh = spec.slug === "editorial-mesh-gradient";
 
   return (

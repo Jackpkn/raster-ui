@@ -1,6 +1,7 @@
 "use client";
 
 import { AgentReasoningOrbit } from "@/registry/components/agent-reasoning-orbit";
+import { AnimatedMetricStrip } from "@/registry/components/animated-metric-strip";
 import { AsciiWaveField } from "@/registry/components/ascii-wave-field";
 import { AttentionHeatmapMatrix } from "@/registry/components/attention-heatmap-matrix";
 import { BayerDitherAurora } from "@/registry/components/bayer-dither-aurora";
@@ -29,9 +30,13 @@ import { EventWaterfallStream } from "@/registry/components/event-waterfall-stre
 import { FiberOpticStream } from "@/registry/components/fiber-optic-stream";
 import { FibonacciDotGlobe } from "@/registry/components/fibonacci-dot-globe";
 import { FloatingIslandNavbar } from "@/registry/components/floating-island-navbar";
+import { GlassToastStack } from "@/registry/components/glass-toast-stack";
+import { GrainAuroraHorizon } from "@/registry/components/grain-aurora-horizon";
+import { GrainEclipseCrescent } from "@/registry/components/grain-eclipse-crescent";
 import { GrainGradientOrbs } from "@/registry/components/grain-gradient-orbs";
 import { GrainMeshWarp } from "@/registry/components/grain-mesh-warp";
 import { GravityRippleGrid } from "@/registry/components/gravity-ripple-grid";
+import { HalftoneDitherSphere } from "@/registry/components/halftone-dither-sphere";
 import { HalftoneSpotlight } from "@/registry/components/halftone-spotlight";
 import { HashChainLedger } from "@/registry/components/hash-chain-ledger";
 import { HexagonSignalHive } from "@/registry/components/hexagon-signal-hive";
@@ -41,6 +46,7 @@ import { IsometricCircuitChip } from "@/registry/components/isometric-circuit-ch
 import { IsometricFloatingCube } from "@/registry/components/isometric-floating-cube";
 import { IsometricServerRack } from "@/registry/components/isometric-server-rack";
 import { IsometricSignalTower } from "@/registry/components/isometric-signal-tower";
+import { KbdShortcutDock } from "@/registry/components/kbd-shortcut-dock";
 import { LiquidChromeRipple } from "@/registry/components/liquid-chrome-ripple";
 import { LiquidMetaballBlob } from "@/registry/components/liquid-metaball-blob";
 import { LiveActivityStack } from "@/registry/components/live-activity-stack";
@@ -51,6 +57,7 @@ import { MarqueeLogoRibbon } from "@/registry/components/marquee-logo-ribbon";
 import { MeshTopologyFlow } from "@/registry/components/mesh-topology-flow";
 import { MetricGaugeArc } from "@/registry/components/metric-gauge-arc";
 import { MicrochipPinoutCore } from "@/registry/components/microchip-pinout-core";
+import { MoireInterferenceRings } from "@/registry/components/moire-interference-rings";
 import { MotherboardBusMatrix } from "@/registry/components/motherboard-bus-matrix";
 import { NeuralLayerGraph } from "@/registry/components/neural-layer-graph";
 import { NeuroPlasmaField } from "@/registry/components/neuro-plasma-field";
@@ -75,6 +82,7 @@ import { SiliconWaferGrid } from "@/registry/components/silicon-wafer-grid";
 import { SmokeRingShader } from "@/registry/components/smoke-ring-shader";
 import { SplitFlapCounter } from "@/registry/components/split-flap-counter";
 import { SpotlightBentoCard } from "@/registry/components/spotlight-bento-card";
+import { SpotlightHeroBadge } from "@/registry/components/spotlight-hero-badge";
 import { SpotlightTestimonialCard } from "@/registry/components/spotlight-testimonial-card";
 import { StepperProgressRail } from "@/registry/components/stepper-progress-rail";
 import { StippledVortexSwirl } from "@/registry/components/stippled-vortex-swirl";
@@ -85,8 +93,10 @@ import { TiltGlassCard } from "@/registry/components/tilt-glass-card";
 import { TimelineMilestoneRail } from "@/registry/components/timeline-milestone-rail";
 import { TokenStreamComposer } from "@/registry/components/token-stream-composer";
 import { TopographicContours } from "@/registry/components/topographic-contours";
+import { TypewriterGradientLine } from "@/registry/components/typewriter-gradient-line";
 import { VectorCircuitTrace } from "@/registry/components/vector-circuit-trace";
 import { VoronoiPulseGrid } from "@/registry/components/voronoi-pulse-grid";
+import { VoronoiStainedGlass } from "@/registry/components/voronoi-stained-glass";
 import { WireframeTorusKnot } from "@/registry/components/wireframe-torus-knot";
 import { WordFlipHeadline } from "@/registry/components/word-flip-headline";
 import { ZeroTrustFirewall } from "@/registry/components/zero-trust-firewall";
@@ -1338,6 +1348,131 @@ export function ComponentStage({
           paused={paused}
           className={`w-full ${heightClass} rounded-xl`}
         />
+      );
+
+    case "grain-eclipse-crescent":
+      return (
+        <GrainEclipseCrescent
+          colors={pal.shaderStops5}
+          grain={0.07 + pixelSize * 0.045}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "grain-aurora-horizon":
+      return (
+        <GrainAuroraHorizon
+          colors={pal.shaderStops5}
+          grain={0.07 + pixelSize * 0.045}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "voronoi-stained-glass":
+      return (
+        <VoronoiStainedGlass
+          colors={pal.shaderStops4}
+          grain={0.05 + pixelSize * 0.038}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "moire-interference-rings":
+      return (
+        <MoireInterferenceRings
+          colors={pal.shaderStops4}
+          grain={0.05 + pixelSize * 0.036}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "halftone-dither-sphere":
+      return (
+        <HalftoneDitherSphere
+          colors={pal.shaderStops5}
+          grain={0.07 + pixelSize * 0.045}
+          speed={speed}
+          paused={paused}
+          className={`w-full ${heightClass} rounded-xl`}
+        />
+      );
+
+    case "spotlight-hero-badge":
+      return (
+        <div
+          className={`flex w-full ${heightClass} flex-col items-center justify-center gap-3 rounded-xl bg-[#060609] px-4`}
+        >
+          <SpotlightHeroBadge
+            label={customText?.trim() || "100 zero-dependency components live"}
+            accentColor={pal.accentHex}
+            speed={speed}
+            paused={paused}
+            className={compact ? "scale-95" : "scale-110"}
+          />
+          <span className="font-mono text-[11px] text-[#8d8880]">
+            Pure CSS rotating conic light rim
+          </span>
+        </div>
+      );
+
+    case "kbd-shortcut-dock":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center rounded-xl bg-[#060609] px-4`}
+        >
+          <KbdShortcutDock
+            accentColor={pal.accentHex}
+            className={compact ? "scale-95" : "scale-110"}
+          />
+        </div>
+      );
+
+    case "animated-metric-strip":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center overflow-hidden rounded-xl bg-[#050507] p-4`}
+        >
+          <AnimatedMetricStrip
+            accentColor={pal.accentHex}
+            speed={speed}
+            paused={paused}
+            className={compact ? "scale-95" : ""}
+          />
+        </div>
+      );
+
+    case "glass-toast-stack":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center overflow-hidden rounded-xl bg-[#050507] p-4`}
+        >
+          <GlassToastStack
+            accentColor={pal.accentHex}
+            className={compact ? "scale-95" : "scale-110"}
+          />
+        </div>
+      );
+
+    case "typewriter-gradient-line":
+      return (
+        <div
+          className={`flex w-full ${heightClass} items-center justify-center rounded-xl bg-[#060609] px-6 text-center`}
+        >
+          <TypewriterGradientLine
+            accentColor={pal.accentHex}
+            speed={speed}
+            paused={paused}
+            className={compact ? "text-xl sm:text-2xl" : "text-3xl sm:text-5xl"}
+          />
+        </div>
       );
 
     default:
